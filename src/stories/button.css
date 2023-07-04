@@ -1,30 +1,110 @@
-.storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  border: 0;
-  border-radius: 3em;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
+.button {
+  /* common button styles here */
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: 600;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
-.storybook-button--primary {
-  color: white;
-  background-color: #1ea7fd;
+
+/* Button types */
+.button--primary { 
+  border-radius: var(--border-radius-round, 999px);
+  border: 1px solid var(--colour-button-primary-default-border, rgba(255, 255, 255, 0.00));
+  background: var(--colour-button-primary-default-bg, #46070B);
+  color: var(--colour-button-primary-default-fg, #FFF);
 }
-.storybook-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-}
-.storybook-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
-}
-.storybook-button--medium {
+.button--secondary { 
+  border-radius: var(--border-radius-round, 999px);
+  border: 1px solid var(--colour-button-secondary-default-border, #46070B);
+  background: var(--colour-button-secondary-default-bg, #FFF);
+ }
+.button--tertiary { /* tertiary button styles */ }
+.button--ghost { /* ghost button styles */ }
+.button--danger { /* danger button styles */ }
+
+/* Button sizes */
+.button--small { 
+  padding: var(--spacing-space-3, 6px) var(--spacing-space-7, 20px);
+  gap: var(--spacing-space-3, 6px);
   font-size: 14px;
-  padding: 11px 20px;
-}
-.storybook-button--large {
+  line-height: 20px;
+ }
+.button--medium { 
+  padding: var(--spacing-space-4, 8px) var(--spacing-space-8, 24px);
+  gap: var(--spacing-space-4, 8px);
   font-size: 16px;
-  padding: 12px 24px;
+  line-height: 24px;
+ }
+
+/* Button with icon */
+.button--with-icon { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .button--medium .button-icon {
+  width: var(--icon-size-md, 24px);
+  height: var(--icon-size-md, 24px);
+}
+
+.button--small .button-icon {
+  width: var(--icon-size-sm, 20px);
+  height: var(--icon-size-sm, 20px);
+}
+
+/* Hover states for each button type */
+.button--primary:hover { 
+  border: 1px solid var(--colour-button-primary-hover-border, rgba(255, 255, 255, 0.00));
+  background: var(--colour-button-primary-hover-bg, #4876CE);
+ }
+.button--secondary:hover { /* secondary button hover styles */ }
+.button--tertiary:hover { /* tertiary button hover styles */ }
+.button--ghost:hover { /* ghost button hover styles */ }
+.button--danger:hover { /* danger button hover styles */ }
+
+/* Focus states for each button type */
+.button--primary:focus {
+  border: 1px solid var(--colour-button-primary-focus-border, #FFF);
+  background: var(--colour-button-primary-focus-bg, #4876CE);
+
+  /* focus/default */
+  box-shadow: 0px 0px 0px 4px #4876CE;
+}
+.button--secondary:focus { /* secondary button hover styles */ }
+.button--tertiary:focus { /* tertiary button hover styles */ }
+.button--ghost:focus { /* ghost button hover styles */ }
+.button--danger:focus { /* danger button hover styles */ }
+
+/* Press states for each button type */
+.button--primary:active {
+  border: 1px solid var(--colour-button-primary-press-border, rgba(255, 255, 255, 0.00));
+  background: var(--colour-button-primary-press-bg, #275DC5);
+}
+.button--secondary:active { /* secondary button hover styles */ }
+.button--tertiary:active { /* tertiary button hover styles */ }
+.button--ghost:active { /* ghost button hover styles */ }
+.button--danger:active { /* danger button hover styles */ }
+
+/* Disabled states for each button type */
+.button--primary:disabled {
+  border: 1px solid var(--colour-button-primary-default-border, rgba(255, 255, 255, 0.00));
+  opacity: 0.30000001192092896;
+  background: var(--colour-button-primary-default-bg, #46070B);
+}
+.button--secondary:disabled { /* secondary button hover styles */ }
+.button--tertiary:disabled { /* tertiary button hover styles */ }
+.button--ghost:disabled { /* ghost button hover styles */ }
+.button--danger:disabled { /* danger button hover styles */ }
+
+
+/* Icon styles */
+.icon { /* common icon styles */ }
+
+
+@font-face {
+  font-family: 'Work Sans'; 
+  src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
 }

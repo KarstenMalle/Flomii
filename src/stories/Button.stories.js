@@ -1,39 +1,45 @@
 import { Button } from './Button';
+import Icon from './assets/icons/Icon.png'; // adjust this path as necessary
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 export default {
   title: 'Example/Button',
   component: Button,
-  tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color' },
+    type: {
+      control: {
+        type: 'select',
+        options: ['primary', 'secondary', 'tertiary', 'ghost', 'danger'],
+      },
+    },
+    withIcon: { control: 'boolean' },
+    size: {
+      control: {
+        type: 'select',
+        options: ['small', 'medium'],
+      },
+    },
+    label: { control: 'text' },
   },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
+const Template = (args) => <Button {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  type: 'primary',
+  label: 'Button',
+  disabled: false,
+  withIcon: false,
+  iconSrc: Icon,
 };
 
-export const Secondary = {
-  args: {
-    label: 'Button',
-  },
+export const Secondary = Template.bind({});
+Secondary.args = {
+  type: 'secondary',
+  label: 'Button',
+  disabled: false,
+  withIcon: false,
+  iconSrc: Icon,
 };
 
-export const Large = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
-};
+// add other button types and variations similarly
