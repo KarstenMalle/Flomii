@@ -1,0 +1,102 @@
+:root {
+    /* Fonts */
+    --font-work-sans: 'Work Sans';
+    --font-weight: 600;
+    
+    /* Colors */
+    --colour-button-primary-default-border: rgba(255, 255, 255, 0.00);
+    --colour-button-primary-default-bg: #46070B;
+    --colour-button-primary-default-fg: #FFF;
+
+    --colour-button-secondary-default-border: #46070B;
+    --colour-button-secondary-default-bg: #FFF;
+    --colour-button-secondary-default-fg: #46070B;
+
+    --colour-button-tertiary-default-border: rgba(255, 255, 255, 0.00);
+    --colour-button-tertiary-default-bg: #F7F5F3;
+    --colour-button-tertiary-default-fg: #190402;
+
+    --colour-button-ghost-default-border: rgba(255, 255, 255, 0.00);
+    --colour-button-ghost-default-bg: rgba(255, 255, 255, 0.00);
+    --colour-button-ghost-default-fg: #46070B;
+
+    --colour-button-danger-default-border: #CD1127;
+    --colour-button-danger-default-bg: #FFF;
+    --colour-button-danger-default-fg: #CD1127;
+
+    /* Hover */
+    --colour-button-primary-hover-border: rgba(255, 255, 255, 0.00);
+    --colour-button-primary-hover-bg: #4876CE;
+
+    --colour-button-secondary-hover-border: #46070B;
+    --colour-button-secondary-hover-bg: #FAEDEE;
+
+    --colour-button-tertiary-hover-border: rgba(255, 255, 255, 0.00);
+    --colour-button-tertiary-hover-bg: #EEEBE7;
+
+    --colour-button-ghost-hover-border: rgba(255, 255, 255, 0.00);
+    --colour-button-ghost-hover-bg: #F7F5F3;
+
+    --colour-button-danger-hover-border: #CD1127;
+    --colour-button-danger-hover-bg: #FAEDEE;
+
+    /* Focus */
+    --colour-button-primary-focus-border: #FFF;
+    --colour-button-primary-focus-bg: #4876CE;
+
+    --colour-button-secondary-focus-border: #46070B;
+    --colour-button-secondary-focus-bg: #FAEDEE;
+
+    --colour-button-tertiary-focus-border: #FFF;
+    --colour-button-tertiary-focus-bg: #EEEBE7;
+
+    --colour-button-ghost-focus-border: #FFF;
+    --colour-button-ghost-focus-bg: #F7F5F3;
+
+    --colour-button-danger-focus-border: #CD1127;
+    --colour-button-danger-focus-bg: #FAEDEE;
+
+    /* Press */
+    --colour-button-primary-press-border: rgba(255, 255, 255, 0.00);
+    --colour-button-primary-press-bg: #275DC5;
+
+    --colour-button-secondary-press-border: #46070B;
+    --colour-button-secondary-press-bg: #F6DADD;
+
+    --colour-button-tertiary-press-border: rgba(255, 255, 255, 0.00);
+    --colour-button-tertiary-press-bg: #DAD8D4;
+
+    --colour-button-ghost-press-border: rgba(255, 255, 255, 0.00);
+    --colour-button-ghost-press-bg: #EEEBE7;
+
+    --colour-button-danger-press-border: #CD1127;
+    --colour-button-danger-press-bg: #F6DADD;
+  
+    /* Border radius */
+    --border-radius-round: 999px;
+  
+    /* Spacing */
+    --spacing-space-3: 6px;
+    --spacing-space-4: 8px;
+    --spacing-space-5: 12px;
+    --spacing-space-6: 16px;
+    --spacing-space-7: 20px;
+    --spacing-space-8: 24px;
+  
+    /* Icon sizes */
+    --icon-size-md: 24px;
+    --icon-size-sm: 20px;
+
+      /* Motion Tokens */
+    --motion-easing-standard: cubic-bezier(0.3, 0, 0.1, 1.0);
+    --motion-easing-enter: cubic-bezier(0, 0.2, 0.1, 1.0);
+    --motion-easing-exit: cubic-bezier(0.3, 0, 0.8, 0.15);
+
+    /* Duration Tokens */
+    --motion-duration-short-1: 100ms;
+    --motion-duration-short-2: 150ms;
+    --motion-duration-medium-1: 200ms;
+    --motion-duration-medium-2: 350ms;
+    --motion-duration-long-1: 500ms;
+    --motion-duration-long-2: 700ms;
+  }
