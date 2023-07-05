@@ -22,28 +22,24 @@
   border: 1px solid var(--colour-button-secondary-default-border);
   background: var(--colour-button-secondary-default-bg);
   color: var(--colour-button-secondary-default-fg);
-  transition: all var(--motion-duration-medium-1) var(--motion-easing-standard);
 }
 .button--tertiary {
   border-radius: var(--border-radius-round);
   border: 1px solid var(--colour-button-tertiary-default-border);
   background: var(--colour-button-tertiary-default-bg);
   color: var(--colour-button-tertiary-default-fg);
-  transition: all var(--motion-duration-medium-1) var(--motion-easing-standard);
 }
 .button--ghost {
   border-radius: var(--border-radius-round);
   border: 1px solid var(--colour-button-ghost-default-border);
   background: var(--colour-button-ghost-default-bg);
   color: var(--colour-button-ghost-default-fg);
-  transition: all var(--motion-duration-medium-1) var(--motion-easing-standard);
 }
 .button--danger {
   border-radius: var(--border-radius-round);
   border: 1px solid var(--colour-button-danger-default-border);
   background: var(--colour-button-danger-default-bg);
   color: var(--colour-button-danger-default-fg);
-  transition: all var(--motion-duration-medium-1) var(--motion-easing-standard);
 }
 
 /* Button sizes */
@@ -92,24 +88,37 @@
 .button--primary:hover {
   border: 1px solid var(--colour-button-primary-hover-border);
   background: var(--colour-button-primary-hover-bg);
-  transition: background var(--motion-duration-medium-1) var(--motion-easing-standard), 
-              border var(--motion-duration-medium-1) var(--motion-easing-standard);
+  transition: background var(--motion-duration-medium-1)
+      var(--motion-easing-standard),
+    border var(--motion-duration-medium-1) var(--motion-easing-standard);
 }
 .button--secondary:hover {
   border: 1px solid var(--colour-button-secondary-hover-border);
   background: var(--colour-button-secondary-hover-bg);
+  transition: background var(--motion-duration-medium-1)
+      var(--motion-easing-standard),
+    border var(--motion-duration-medium-1) var(--motion-easing-standard);
 }
 .button--tertiary:hover {
   border: 1px solid var(--colour-button-tertiary-hover-border);
   background: var(--colour-button-tertiary-hover-bg);
+  transition: background var(--motion-duration-medium-1)
+      var(--motion-easing-standard),
+    border var(--motion-duration-medium-1) var(--motion-easing-standard);
 }
 .button--ghost:hover {
   border: 1px solid var(--colour-button-ghost-hover-border);
   background: var(--colour-button-ghost-hover-bg);
+  transition: background var(--motion-duration-medium-1)
+      var(--motion-easing-standard),
+    border var(--motion-duration-medium-1) var(--motion-easing-standard);
 }
 .button--danger:hover {
   border: 1px solid var(--colour-button-danger-hover-border);
   background: var(--colour-button-danger-hover-bg);
+  transition: background var(--motion-duration-medium-1)
+      var(--motion-easing-standard),
+    border var(--motion-duration-medium-1) var(--motion-easing-standard);
 }
 
 /* Focus states for each button type */
