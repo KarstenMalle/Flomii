@@ -35,7 +35,7 @@ The future direction of this project includes:
 
 ## Author
 
-This project is authored by [Karsten Bak Malle].
+This project is authored by __Karsten Bak Malle__.
 
 ## Acknowledgements
 
