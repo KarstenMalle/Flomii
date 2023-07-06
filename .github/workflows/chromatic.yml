@@ -1,0 +1,15 @@
+name: 'Chromatic'
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm ci
+      - uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # 👇 Chromatic projectToken, get it from https://www.chromatic.com/manage?appId=<your-app-id>
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
