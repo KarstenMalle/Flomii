@@ -11,26 +11,31 @@
 .icon-button--primary {
   border: 1px solid var(--colour-button-primary-default-border);
   background: var(--colour-button-primary-default-bg);
+  color: var(--colour-button-primary-default-fg);
 }
 
 .icon-button--secondary {
   border: 1px solid var(--colour-button-secondary-default-border);
   background: var(--colour-button-secondary-default-bg);
+  color: var(--colour-button-secondary-default-fg);
 }
 
 .icon-button--tertiary {
   border: 1px solid var(--colour-button-tertiary-default-border);
   background: var(--colour-button-tertiary-default-bg);
+  color: var(--colour-button-tertiary-default-fg);
 }
 
 .icon-button--ghost {
   border: 1px solid var(--colour-button-ghost-default-border);
   background: var(--colour-button-ghost-default-bg);
+  color: var(--colour-button-ghost-default-fg);
 }
 
 .icon-button--danger {
   border: 1px solid var(--colour-button-danger-default-border);
   background: var(--colour-button-danger-default-bg);
+  color: var(--colour-button-danger-default-fg);
 }
 
 /* Icon button sizes */
@@ -39,7 +44,7 @@
   gap: var(--spacing-space-3);
 }
 
-.button--small .button-icon {
+.icon-button--small .button-icon {
   width: var(--icon-size-sm);
   height: var(--icon-size-sm);
 }
@@ -49,7 +54,7 @@
   gap: var(--spacing-space-4);
 }
 
-.button--medium .button-icon {
+.icon-button--medium .button-icon {
   width: var(--icon-size-md);
   height: var(--icon-size-md);
 }

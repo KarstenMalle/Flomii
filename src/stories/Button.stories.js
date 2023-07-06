@@ -1,9 +1,4 @@
 import { Button } from './Button';
-import IconPrimary from './assets/icons/Primary_Icon.svg';
-import IconSecondary from './assets/icons/Secondary_Icon.svg';
-import IconTertiary from './assets/icons/Tertiary_Icon.svg';
-import IconGhost from './assets/icons/Ghost_Icon.svg';
-import IconDanger from './assets/icons/Danger_Icon.svg';
 
 export default {
   title: 'Example/Button',
@@ -34,7 +29,6 @@ Primary.args = {
   label: 'Button',
   disabled: false,
   withIcon: false,
-  iconSrc: IconPrimary,
 };
 
 export const Secondary = Template.bind({});
@@ -43,7 +37,6 @@ Secondary.args = {
   label: 'Button',
   disabled: false,
   withIcon: false,
-  iconSrc: IconSecondary,
 };
 
 export const Tertiary = Template.bind({});
@@ -52,7 +45,6 @@ Tertiary.args = {
   label: 'Button',
   disabled: false,
   withIcon: false,
-  iconSrc: IconTertiary,
 };
 
 export const Ghost = Template.bind({});
@@ -61,7 +53,6 @@ Ghost.args = {
   label: 'Button',
   disabled: false,
   withIcon: false,
-  iconSrc: IconGhost,
 };
 
 export const Danger = Template.bind({});
@@ -70,7 +61,6 @@ Danger.args = {
   label: 'Button',
   disabled: false,
   withIcon: false,
-  iconSrc: IconDanger,
 };
 
 // add other button types and variations similarly

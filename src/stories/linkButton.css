@@ -1,0 +1,110 @@
+@import "variables.css";
+
+.link-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--spacing-space-4);
+  font-family: var(--font-work-sans);
+  font-style: normal;
+  font-weight: var(--font-weight);
+}
+
+/* Link button types */
+.link-button--default {
+  border: 1px solid var(--colour-button-link-default-border);
+  background: var(--colour-button-link-default-bg);
+  color: var(--colour-button-link-default-fg);
+}
+.link-button--neutral {
+  border: 1px solid var(--colour-button-link-neutral-default-border);
+  background: var(--colour-button-link-neutral-default-bg);
+  color: var(--color-button-link-neutral-default-fg);
+}
+
+/* link button sizes */
+.link-button--small {
+  padding: var(--spacing-space-3);
+  gap: var(--spacing-space-3);
+
+  font-family: var(--label-sm-bold-font-family);
+  font-size: var(--label-sm-bold-font-size);
+  font-style: var(--label-sm-bold-font-style);
+  font-weight: var(--label-sm-bold-font-weight);
+  line-height: var(--label-sm-bold-line-height);
+}
+.link-button--small .button-icon {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+}
+
+.link-button--medium {
+  padding: var(--spacing-space-4);
+  gap: var(--spacing-space-4);
+
+  font-family: var(--label-md-bold-font-family);
+  font-size: var(--label-md-bold-font-size);
+  font-style: var(--label-md-bold-font-style);
+  font-weight: var(--label-md-bold-font-weight);
+  line-height: var(--label-md-bold-line-height);
+}
+.link-button--medium .button-icon {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+/* Hover states for each button type */
+.link-button--default:hover {
+  border: 1px solid var(--colour-button-link-hover-border);
+  background: var(--colour-button-link-hover-bg);
+  color: var(--colour-button-link-hover-fg);
+  text-decoration-line: underline;
+
+}
+.link-button--neutral:hover {
+  border: 1px solid var(--colour-button-link-neutral-hover-border);
+  background: var(--colour-button-link-neutral-hover-bg);
+  color: var(--colour-button-link-neutral-hover-fg);
+  text-decoration-line: underline;
+}
+
+/* Focus states for each button type */
+.link-button--default:focus-visible {
+  box-shadow: 0 0 0 4px var(--colour-focus-default);
+  background: var(--colour-button-link-focus-bg);
+  color: var(--colour-button-link-focus-fg);
+  text-decoration-line: underline;
+  outline: none;
+}
+.link-button--neutral:focus-visible {
+  box-shadow: 0 0 0 4px var(--colour-focus-default);
+  background: var(--colour-button-link-neutral-focus-bg);
+  color: var(--colour-button-link-neutral-focus-fg);
+  text-decoration-line: underline;
+  outline: none;
+}
+
+/* Press states for each button type */
+.link-button--default:active {
+  border: 1px solid var(--colour-button-link-press-border);
+  background: var(--colour-button-link-press-bg);
+  color: var(--colour-button-link-press-fg);
+}
+
+.link-button--neutral:active {
+  border: 1px solid var(--colour-button-link-neutral-press-border);
+  background: var(--colour-button-link-neutral-press-bg);
+  color: var(--colour-button-link-neutral-press-fg);
+}
+
+/* Disabled states for each button type */
+.link-button--default:disabled {
+  border: 1px solid var(--colour-button-link-default-border);
+  opacity: 0.30000001192092896;
+  background: var(--colour-button-link-default-bg);
+}
+.link-button--neutral:disabled {
+  border: 1px solidvar(--colour-button-link-neutral-default-border);
+  opacity: 0.30000001192092896;
+  background: var(--colour-button-link-neutral-default-bg);
+}

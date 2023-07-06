@@ -2,8 +2,21 @@
     /* Fonts */
     --font-work-sans: 'Work Sans';
     --font-weight: 600;
+
+    /* Typography styles */
+    --label-sm-bold-font-family: 'Work Sans';
+    --label-sm-bold-font-size: 14px;
+    --label-sm-bold-font-style: normal;
+    --label-sm-bold-font-weight: 600;
+    --label-sm-bold-line-height: 20px;
+
+    --label-md-bold-font-family: 'Work Sans';
+    --label-md-bold-font-size: 16px;
+    --label-md-bold-font-style: normal;
+    --label-md-bold-font-weight: 600;
+    --label-md-bold-line-height: 24px;
     
-    /* Colors */
+    /* --- Button --- */
     --colour-button-primary-default-border: rgba(255, 255, 255, 0.00);
     --colour-button-primary-default-bg: #46070B;
     --colour-button-primary-default-fg: #FFF;
@@ -71,6 +84,48 @@
 
     --colour-button-danger-press-border: #CD1127;
     --colour-button-danger-press-bg: #F6DADD;
+
+    /* --- Link button --- */
+    --colour-button-link-default-border: rgba(255, 255, 255, 0.00);
+    --colour-button-link-default-bg: rgba(255, 255, 255, 0.00);
+    --colour-button-link-default-fg: #2051A7;
+
+    --colour-button-link-neutral-default-border: rgba(255, 255, 255, 0.00);
+    --colour-button-link-neutral-default-bg: rgba(255, 255, 255, 0.00);
+    --colour-button-link-neutral-default-fg: #190402;
+
+    /* Link button hover */
+    --colour-button-link-hover-border: rgba(255, 255, 255, 0.00);
+    --colour-button-link-hover-bg: rgba(255, 255, 255, 0.00);
+    --colour-button-link-hover-fg: #133A6A;
+
+    --colour-button-link-neutral-hover-border: rgba(255, 255, 255, 0.00);
+    --colour-button-link-neutral-hover-bg: rgba(255, 255, 255, 0.00);
+    --colour-button-link-neutral-hover-fg: #133A6A;
+
+    /* Link button focus */
+    --colour-button-link-focus-bg: rgba(255, 255, 255, 0.00);
+    --colour-button-link-focus-fg: #133A6A;
+
+    --colour-button-link-neutral-focus-bg: rgba(255, 255, 255, 0.00);
+    --colour-button-link-neutral-focus-fg: #133A6A;
+
+    /* Link button press/active */
+    --colour-button-link-press-border: rgba(255, 255, 255, 0.00);
+    --colour-button-link-press-bg: rgba(255, 255, 255, 0.00);
+    --colour-button-link-press-fg: #0C2F4B;
+
+    --colour-button-link-neutral-press-border: rgba(255, 255, 255, 0.00);
+    --colour-button-link-neutral-press-bg: rgba(255, 255, 255, 0.00);
+    --colour-button-link-neutral-press-fg: #0C2F4B;
+
+
+
+    /* Focus */
+    --colour-focus-default: #4876CE;
+    --colour-focus-success: #52ABA3;
+    --colour-focus-danger: #DD515B;
+
   
     /* Border radius */
     --border-radius-round: 999px;

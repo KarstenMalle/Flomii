@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
+import { ReactComponent as PlusIcon } from './assets/icons/PlusIcon.svg';
 
-export const Button = ({ type, withIcon, size, label, disabled, iconSrc, ...props }) => {
+export const Button = ({ type, withIcon, size, label, disabled, ...props }) => {
   return (
     <button
       type="button"
@@ -11,7 +12,7 @@ export const Button = ({ type, withIcon, size, label, disabled, iconSrc, ...prop
       {...props}
     >
       {label}
-      {withIcon && <img src={iconSrc} alt="button icon" className="button-icon" />}
+      {withIcon && <PlusIcon alt="icon button" className="button-icon" />}
     </button>
   );
 };
@@ -23,7 +24,6 @@ Button.propTypes = {
   size: PropTypes.oneOf(['small', 'medium']),
   label: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
-  iconSrc: PropTypes.string,
   onClick: PropTypes.func,
 };
 
@@ -32,7 +32,6 @@ Button.defaultProps = {
   withIcon: false,
   size: 'medium',
   disabled: false,
-  iconSrc: null,
   onClick: undefined,
 };
 
