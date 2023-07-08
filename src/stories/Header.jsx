@@ -1,57 +1,91 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import React from "react";
+import { ReactComponent as HeartOutline } from "./assets/icons/heart-outline.svg";
+import { IconButton } from "./IconButton";
+import { Link } from "./Link";
+import { Logo } from "./assets/icons/FlomiiLogo.svg";
+import { NavigationBar } from "./NavigationBar";
+import { ReactComponent as ShoppingBag03 } from "./assets/icons/shopping-bag-03.svg";
+import { ReactComponent as User03 } from "./assets/icons/user-03.svg";
+import "./header.css";
 
-import { Button } from './Button';
-import './header.css';
+export const Header = ({
+  user,
+  onLogin,
+  onLogout,
+  onCreateAccount,
+  screenSize,
+  className,
+  iconButtonIcon = <User03 className="icon-instance-node" color="#46070B" />,
+  override = <HeartOutline className="icon-instance-node" color="#46070B" />,
+  iconButtonIcon1 = <ShoppingBag03 className="icon-instance-node" color="#46070B" />,
+}) => {
+  return (
+    <div className={`header-desktop ${className}`}>
+      {screenSize === "desktop-large" && (
+        <>
+          <div className="div">
+            <div className="logo-wrapper">
+              <Logo className="logo-instance" logo="logo.svg" />
+            </div>
+            <div className="search-wrapper">
+            
+            </div>
+            <div className="buttons">
+              <IconButton icon={iconButtonIcon} size="medium" state="default" type="ghost" />
+              <IconButton icon={override} size="medium" state="default" type="ghost" />
+              <IconButton icon={iconButtonIcon1} size="medium" state="default" type="ghost" />
+            </div>
+          </div>
+          <div className="container-wrapper">
+            <div className="nav-wrapper">
+              <div className="nav-2">
+                <Link size="medium" state="default" />
+                <Link size="medium" state="default" />
+                <Link size="medium" state="default" />
+                <Link size="medium" state="default" />
+                <Link size="medium" state="default" />
+                <Link size="medium" state="default" />
+                <Link size="medium" state="default" />
+                <Link size="medium" state="default" />
+                <Link size="medium" state="default" />
+                <Link size="medium" state="default" />
+              </div>
+            </div>
+          </div>
+        </>
+      )}
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
-  <header>
-    <div className="storybook-header">
-      <div>
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <g fill="none" fillRule="evenodd">
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
-            />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
-            />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
-            />
-          </g>
-        </svg>
-        <h1>Acme</h1>
-      </div>
-      <div>
-        {user ? (
-          <>
-            <span className="welcome">
-              Welcome, <b>{user.name}</b>!
-            </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
-          </>
-        ) : (
-          <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
-          </>
-        )}
-      </div>
+      {screenSize === "full" && (
+        <>
+          <div className="container-2">
+            <div className="logo-wrapper">
+              <Logo className="logo-instance" logo="image.svg" />
+            </div>
+            <div className="search-wrapper">
+              
+            </div>
+            <div className="buttons">
+              <IconButton icon={iconButtonIcon} size="medium" state="default" type="ghost" />
+              <IconButton icon={override} size="medium" state="default" type="ghost" />
+              <IconButton icon={iconButtonIcon1} size="medium" state="default" type="ghost" />
+            </div>
+          </div>
+          <NavigationBar className="instance-node" visible={false} visible1={false} width="full" />
+        </>
+      )}
     </div>
-  </header>
-);
+  );
+};
 
 Header.propTypes = {
   user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
   }),
-  onLogin: PropTypes.func.isRequired,
-  onLogout: PropTypes.func.isRequired,
-  onCreateAccount: PropTypes.func.isRequired,
+  onLogin: PropTypes.func,
+  onLogout: PropTypes.func,
+  onCreateAccount: PropTypes.func,
+  screenSize: PropTypes.oneOf(["full", "desktop-large"]),
 };
 
 Header.defaultProps = {

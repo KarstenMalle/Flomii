@@ -1,0 +1,55 @@
+@import "variables.css";
+
+.link {
+  color: var(--colour-fg-muted);
+  display: inline-flex;
+  padding: var(--spacing-space-1) var(--spacing-space-4);
+  align-items: center;
+  gap: var(--spacing-space-3);
+  text-decoration: none;
+}
+
+/* link button sizes */
+.link--small {
+  font-family: var(--label-sm-regular-font-family);
+  font-size: var(--label-sm-regular-font-size);
+  font-style: var(--label-sm-regular-font-style);
+  font-weight: var(--label-sm-regular-font-weight);
+  line-height: var(--label-sm-regular-line-height);
+}
+
+.link--medium {
+  font-family: var(--label-md-regular-font-family);
+  font-size: var(--label-md-regular-font-size);
+  font-style: var(--label-md-regular-font-style);
+  font-weight: var(--label-md-regular-font-weight);
+  line-height: var(--label-md-regular-line-height);
+}
+
+.link--large {
+  font-family: var(--label-lg-regular-font-family);
+  font-size: var(--label-lg-regular-font-size);
+  font-style: var(--label-lg-regular-font-style);
+  font-weight: var(--label-lg-regular-font-weight);
+  line-height: var(--label-lg-regular-line-height);
+}
+
+
+/* Hover states for each button type */
+.link--default:hover {
+  color: var(--colour-fg-interactive);
+}
+
+/* Focus states for each button type */
+.link--default:focus-visible {
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 0 0 4px var(--colour-focus-default);
+  color: var(--colour-fg-interactive);
+  outline: none;
+}
+
+
+/* Press states for each button type */
+.link--default:active {
+  color: var(--colour-fg-default);
+}

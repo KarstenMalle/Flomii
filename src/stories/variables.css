@@ -4,17 +4,129 @@
     --font-weight: 600;
 
     /* Typography styles */
+
+    /* Small */
+    --label-sm-regular-font-family: 'Work Sans';
+    --label-sm-regular-font-size: 14px;
+    --label-sm-regular-font-style: normal;
+    --label-sm-regular-font-weight: 400;
+    --label-sm-regular-line-height: 20px;
+
+    --label-sm-medium-font-family: 'Work Sans';
+    --label-sm-medium-font-size: 14px;
+    --label-sm-medium-font-style: normal;
+    --label-sm-medium-font-weight: 500;
+    --label-sm-medium-line-height: 20px;
+
     --label-sm-bold-font-family: 'Work Sans';
     --label-sm-bold-font-size: 14px;
     --label-sm-bold-font-style: normal;
     --label-sm-bold-font-weight: 600;
     --label-sm-bold-line-height: 20px;
 
+    --label-sm-regular-underline-font-family: 'Work Sans';
+    --label-sm-regular-underline-font-size: 14px;
+    --label-sm-regular-underline-font-style: normal;
+    --label-sm-regular-underline-font-weight: 400;
+    --label-sm-regular-underline-line-height: 20px;
+    --label-sm-regular-underline-text-decoration-line: underline;
+
+    --label-sm-medium-underline-font-family: 'Work Sans';
+    --label-sm-medium-underline-font-size: 14px;
+    --label-sm-medium-underline-font-style: normal;
+    --label-sm-medium-underline-font-weight: 500;
+    --label-sm-medium-underline-line-height: 20px;
+    --label-sm-medium-underline-text-decoration-line: underline;
+
+    --label-sm-bold-underline-font-family: 'Work Sans';
+    --label-sm-bold-underline-font-size: 14px;
+    --label-sm-bold-underline-font-style: normal;
+    --label-sm-bold-underline-font-weight: 600;
+    --label-sm-bold-underline-line-height: 20px;
+    --label-sm-bold-underline-text-decoration-line: underline;
+
+
+    /* Medium */
+    --label-md-regular-font-family: 'Work Sans';
+    --label-md-regular-font-size: 16px;
+    --label-md-regular-font-style: normal;
+    --label-md-regular-font-weight: 400;
+    --label-md-regular-line-height: 24px;
+
+    --label-md-medium-font-family: 'Work Sans';
+    --label-md-medium-font-size: 16px;
+    --label-md-medium-font-style: normal;
+    --label-md-medium-font-weight: 500;
+    --label-md-medium-line-height: 24px;
+
     --label-md-bold-font-family: 'Work Sans';
     --label-md-bold-font-size: 16px;
     --label-md-bold-font-style: normal;
     --label-md-bold-font-weight: 600;
     --label-md-bold-line-height: 24px;
+
+    --label-md-regular-underline-font-family: 'Work Sans';
+    --label-md-regular-underline-font-size: 16px;
+    --label-md-regular-underline-font-style: normal;
+    --label-md-regular-underline-font-weight: 400;
+    --label-md-regular-underline-line-height: 24px;
+    --label-md-regular-underline-text-decoration-line: underline;
+
+    --label-md-medium-underline-font-family: 'Work Sans';
+    --label-md-medium-underline-font-size: 16px;
+    --label-md-medium-underline-font-style: normal;
+    --label-md-medium-underline-font-weight: 500;
+    --label-md-medium-underline-line-height: 24px;
+    --label-md-medium-underline-text-decoration-line: underline;
+
+    --label-md-bold-underline-font-family: 'Work Sans';
+    --label-md-bold-underline-font-size: 16px;
+    --label-md-bold-underline-font-style: normal;
+    --label-md-bold-underline-font-weight: 600;
+    --label-md-bold-underline-line-height: 24px;
+    --label-md-bold-underline-text-decoration-line: underline;
+
+    /* Large */
+    --label-lg-regular-font-family: 'Work Sans';
+    --label-lg-regular-font-size: 18px;
+    --label-lg-regular-font-style: normal;
+    --label-lg-regular-font-weight: 400;
+    --label-lg-regular-line-height: 28px;
+
+    --label-lg-medium-font-family: 'Work Sans';
+    --label-lg-medium-font-size: 18px;
+    --label-lg-medium-font-style: normal;
+    --label-lg-medium-font-weight: 500;
+    --label-lg-medium-line-height: 28px;
+
+    --label-lg-bold-font-family: 'Work Sans';
+    --label-lg-bold-font-size: 18px;
+    --label-lg-bold-font-style: normal;
+    --label-lg-bold-font-weight: 600;
+    --label-lg-bold-line-height: 28px;
+
+    --label-lg-regular-underline-font-family: 'Work Sans';
+    --label-lg-regular-underline-font-size: 18px;
+    --label-lg-regular-underline-font-style: normal;
+    --label-lg-regular-underline-font-weight: 400;
+    --label-lg-regular-underline-line-height: 28px;
+    --label-lg-regular-underline-text-decoration-line: underline;
+
+    --label-lg-medium-underline-font-family: 'Work Sans';
+    --label-lg-medium-underline-font-size: 18px;
+    --label-lg-medium-underline-font-style: normal;
+    --label-lg-medium-underline-font-weight: 500;
+    --label-lg-medium-underline-line-height: 28px;
+    --label-lg-medium-underline-text-decoration-line: underline;
+
+    --label-lg-bold-underline-font-family: 'Work Sans';
+    --label-lg-bold-underline-font-size: 18px;
+    --label-lg-bold-underline-font-style: normal;
+    --label-lg-bold-underline-font-weight: 600;
+    --label-lg-bold-underline-line-height: 28px;
+    --label-lg-bold-underline-text-decoration-line: underline;
+
+    
     
     /* --- Button --- */
     --colour-button-primary-default-border: rgba(255, 255, 255, 0.00);
@@ -119,6 +231,13 @@
     --colour-button-link-neutral-press-bg: rgba(255, 255, 255, 0.00);
     --colour-button-link-neutral-press-fg: #0C2F4B;
 
+    /* Link */
+
+    --colour-fg-default: #190402;
+    --colour-fg-muted: #52504E;
+    --colour-fg-interactive: #CD1127;
+
+
 
 
     /* Focus */
@@ -129,8 +248,11 @@
   
     /* Border radius */
     --border-radius-round: 999px;
+    --border-radius-sm: 4px;
   
     /* Spacing */
+    --spacing-space-1: 2px;
+    --spacing-space-2: 4px;
     --spacing-space-3: 6px;
     --spacing-space-4: 8px;
     --spacing-space-5: 12px;
@@ -154,4 +276,9 @@
     --motion-duration-medium-2: 350ms;
     --motion-duration-long-1: 500ms;
     --motion-duration-long-2: 700ms;
+  }
+
+  @font-face {
+    font-family: "Work Sans";
+    src: url("./assets/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
   }

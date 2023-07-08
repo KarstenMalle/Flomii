@@ -1,0 +1,45 @@
+@import "variables.css";
+
+.navigation-bar {
+  align-items: center;
+  background-color: #f7f5f3;
+  display: flex;
+  justify-content: center;
+  padding: 4px 0px;
+  position: relative;
+  width: 1320px;
+}
+
+.navigation-bar .container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 24px;
+  position: relative;
+}
+
+.navigation-bar .nav {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: fit-content;
+}
+
+.navigation-bar .full {
+  flex: 1;
+}
+
+.navigation-bar .desktop-large {
+  width: 1320px;
+}
+
+.navigation-bar .container.full .nav {
+  gap: 16px;
+}
+
+.navigation-bar .container.desktop-large .nav {
+  gap: 24px;
+}
+
