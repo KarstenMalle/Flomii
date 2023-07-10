@@ -1,49 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './searchField.css';
 import { ReactComponent as SearchIcon } from './assets/icons/search-md.svg'
 import { ReactComponent as SearchXIcon } from './assets/icons/search-x.svg'
 
-export const SearchField = ({ helperText, label, state, onStateChange, hasError, className, textLabelAbove, textLabelBelow, textLabelError }) => {
+export const SearchField = ({ helperText, label, stateInput, onStateChange, hasError, textLabelAbove, textLabelBelow, textLabelError, textPlaceholder }) => {
   const [value, setValue] = useState('');
-  const [placeholder, setPlaceholder] = useState("Search");
+  const [placeholder, setPlaceholder] = useState(textPlaceholder);
+  const [state, setState] = useState(stateInput);
+
+  useEffect(() => {
+    setState(stateInput);
+  }, [stateInput]);
 
   const handleInputChange = (event) => {
     setValue(event.target.value);
-    if (event.target.value) {
-      onStateChange('filled');
-    } else {
-      onStateChange('default');
-    }
   };
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter' && event.target.value !== '') {
       onStateChange('filled');
+      setState('filled');
+      setTimeout(() => event.target.blur(), 0)
     }
   };
 
   const clearInput = () => {
     setValue('');
     onStateChange('default');
+    setState('default');
   };
 
   const handleFocus = () => {
     setPlaceholder("");
+    onStateChange('focus');
+    setState('focus');
   };
   
   const handleBlur = () => {
-    if (value === '') setPlaceholder("Search");
+    if (state === 'focus') {
+      onStateChange('default');
+      setState('default');
+    }
+    setPlaceholder(textPlaceholder);
   };
 
-  const inputClass = hasError ? 'class' : 'class-2';
-  const divClass = `div has-error-${hasError} state-${state}`;
-
   return (
-    <div className={`search ${state} ${className}`}>
+    <div className={`search`}>
       {label && <label className='form-label'>{textLabelAbove}</label>}
 
-      <div className={divClass}>
+      <div className={`has-error-${hasError} state-${state}`}>
+      <div className="input-wrapper">
         <SearchIcon className="search-icon" />
         <input 
           value={value}
@@ -51,18 +58,15 @@ export const SearchField = ({ helperText, label, state, onStateChange, hasError,
           onKeyDown={handleKeyDown}
           onFocus={handleFocus}
           onBlur={handleBlur}
-          className={inputClass} 
+          className="input-field"
           disabled={state === "disabled"} 
           placeholder={placeholder} 
         />
         {(state === 'filled' || state === 'focus') && <SearchXIcon className="x-close" onClick={clearInput} />}
       </div>
+      </div>
 
-      {hasError && (
-        <div className="form-error-text">
-          <div className="help-text-i">{textLabelError}</div>
-        </div>
-      )}
+      {hasError && <label className='form-error-text'>{textLabelError}</label>}
 
       {!hasError && helperText && <label className='form-helper-text'>{textLabelBelow}</label>}
     </div>
@@ -72,11 +76,11 @@ export const SearchField = ({ helperText, label, state, onStateChange, hasError,
 SearchField.propTypes = {
   helperText: PropTypes.bool,
   label: PropTypes.bool,
-  state: PropTypes.oneOf(['disabled', 'filled', 'focus', 'default']),
+  stateInput: PropTypes.oneOf(['disabled', 'filled', 'focus', 'default']),
   onStateChange: PropTypes.func.isRequired,
   hasError: PropTypes.bool,
-  className: PropTypes.string,
   textLabelAbove: PropTypes.string, 
   textLabelBelow: PropTypes.string, 
   textLabelError: PropTypes.string,
+  textPlaceholder: PropTypes.string,
 };

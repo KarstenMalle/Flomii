@@ -236,14 +236,25 @@
     --colour-fg-default: #190402;
     --colour-fg-muted: #52504E;
     --colour-fg-interactive: #CD1127;
-
-
-
+    --colour-fg-danger: #A00E1E;
 
     /* Focus */
     --colour-focus-default: #4876CE;
     --colour-focus-success: #52ABA3;
     --colour-focus-danger: #DD515B;
+
+    /* Focus outline */
+    --focus-default: 0px 0px 0px 4px #4876ce;
+    --focus-success: 0px 0px 0px 4px #52ABA3;
+    --focus-danger: 0px 0px 0px 4px #DD515B;
+
+    /* Search */
+    --colour-border-danger: #CD1127;
+    --colour-border-strong: #8D8A88;
+    --colour-border-interactive: #275dc5;
+
+    --colour-fg-placeholder: #797774;
+
 
   
     /* Border radius */
@@ -259,6 +270,13 @@
     --spacing-space-6: 16px;
     --spacing-space-7: 20px;
     --spacing-space-8: 24px;
+    --spacing-space-9: 32px;
+    --spacing-space-10: 40px;
+    --spacing-space-11: 48px;
+    --spacing-space-12: 56px;
+    --spacing-space-13: 64px;
+    --spacing-space-14: 80px;
+    --spacing-space-15: 96px;
   
     /* Icon sizes */
     --icon-size-md: 24px;

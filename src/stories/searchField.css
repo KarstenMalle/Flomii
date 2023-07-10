@@ -5,12 +5,10 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 350px;
 }
 
 .search label {
   display: flex;
-  width: 350px;
   align-items: center;
   gap: 6px;
 
@@ -24,49 +22,78 @@
 }
 
 .search .form-label {
-  padding-bottom: var(--spacing-space-3, 0px);
+  padding-bottom: var(--spacing-space-3);
 }
 
-.search .form-helper-text {
-  padding-top: var(--spacing-space-3, 6px);
+.search .form-helper-text,
+.search .form-error-text {
+  padding-top: var(--spacing-space-3);
 }
 
-.search .class,
-.search .class-2 {
-  align-self: stretch !important;
-  width: unset !important;
+.search .form-error-text {
+  color: var(--colour-fg-danger);
 }
 
-.search .class {
-  border-color: #cd1127 !important;
-}
-
-.search .class-2 {
-  border-color: #8d8a88 !important;
-}
-
-.search .div {
-  align-items: center;
-  align-self: stretch;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-radius: 999px;
+.search .has-error-false,
+.search .has-error-true {
   display: flex;
-  gap: 6px;
-  overflow: hidden;
-  padding: 8px 48px 8px 16px;
-  position: relative;
+  padding: var(--spacing-space-4) var(--spacing-space-11) var(--spacing-space-4)
+    var(--spacing-space-6);
+  align-items: center;
+  gap: var(--spacing-space-3);
+  align-self: stretch;
+  border-radius: var(--border-radius-round);
+  background: var(--colour-bg-field);
 }
 
-.search .div input {
-  flex-grow: 1;
-  border: none;
+.search .has-error-true {
+  border: 1px solid var(--colour-border-danger);
+}
+
+.search .has-error-false.state-default,
+.search .has-error-false.state-filled {
+  border: 1px solid var(--colour-border-strong);
+}
+
+.search .has-error-false.state-focus {
+  border: 1px solid var(--colour-border-interactive);
+
+  /* focus/default */
+  box-shadow: var(--focus-default);
+  outline: none;
+}
+
+.search .has-error-true.state-focus {
+
+  /* focus/default */
+  box-shadow: var(--focus-danger);
+  outline: none;
+}
+
+.search .input-field {
+
+  border: 0px;
+  outline: none;
+
+  font-family: var(--label-md-regular-font-family);
+  font-size: var(--label-md-regular-font-size);
+  font-style: var(--label-md-regular-font-style);
+  font-weight: var(--label-md-regular-font-weight);
+  line-height: var(--label-md-regular-line-height);
+}
+
+.search .input-field::placeholder {
+  color: var(--colour-fg-placeholder);
+}
+
+.search .state-focus .input-field {
+  color: var(--colour-fg-default);
+
 }
 
 .search .search-icon {
-  height: 24px !important;
-  min-width: 24px !important;
-  position: relative !important;
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
 }
 
 .search .typing-indicator-instance {
@@ -75,59 +102,29 @@
   width: unset !important;
 }
 
-.search .instance-node {
-  top: 2px !important;
-}
-
 .search .x-close {
-  height: 24px !important;
-  position: absolute !important;
-  top: 9px !important;
-  right: 16px !important;
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
   cursor: pointer;
-}
-
-.search .form-error-text {
-  align-items: flex-start;
-  display: flex;
-  padding: 6px 0px 0px;
-  position: relative;
-  width: 350px;
-}
-
-.search .help-text-i {
-  color: #a00e1e;
-  flex: 1;
-  font-family: var(--component-label-sm-regular-font-family);
-  font-size: var(--component-label-sm-regular-font-size);
-  font-style: var(--component-label-sm-regular-font-style);
-  font-weight: var(--component-label-sm-regular-font-weight);
-  letter-spacing: var(--component-label-sm-regular-letter-spacing);
-  line-height: var(--component-label-sm-regular-line-height);
-  margin-top: -1px;
-  position: relative;
-  white-space: nowrap;
 }
 
 .search.disabled {
   opacity: 0.3;
 }
 
-.search .has-error-true {
-  border-color: #cd1127;
+.input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-.search .has-error-false.state-filled,
-.search .has-error-false.state-disabled,
-.search .has-error-false.state-default {
-  border-color: #8d8a88;
+.search-icon, .x-close {
+  flex: 0 0 auto;
 }
 
-.search .has-error-false.state-focus {
-  border-color: #275dc5;
-  box-shadow: var(--focus-default);
-}
-
-.search .has-error-true.state-focus {
-  box-shadow: var(--focus-danger);
+.input-field {
+  flex: 1 0 auto;
+  margin-left: var(--spacing-space-3); /* adjust these margins to your needs */
+  margin-right: var(--spacing-space-3); /* adjust these margins to your needs */
 }
