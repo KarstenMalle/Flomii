@@ -1,23 +1,23 @@
-import { Button } from './Button';
+import { Button } from "./Button";
 
 export default {
-  title: 'Example/Button',
+  title: "Example/Button",
   component: Button,
   argTypes: {
     type: {
       control: {
-        type: 'select',
-        options: ['primary', 'secondary', 'tertiary', 'ghost', 'danger'],
+        type: "select",
+        options: ["primary", "secondary", "tertiary", "ghost", "danger"],
       },
     },
-    withIcon: { control: 'boolean' },
+    withIcon: { control: "boolean" },
     size: {
       control: {
-        type: 'select',
-        options: ['small', 'medium'],
+        type: "select",
+        options: ["small", "medium"],
       },
     },
-    label: { control: 'text' },
+    label: { control: "text" },
   },
 };
 
@@ -25,40 +25,40 @@ const Template = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  type: 'primary',
-  label: 'Button',
+  type: "primary",
+  label: "Button",
   disabled: false,
   withIcon: false,
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  type: 'secondary',
-  label: 'Button',
+  type: "secondary",
+  label: "Button",
   disabled: false,
   withIcon: false,
 };
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
-  type: 'tertiary',
-  label: 'Button',
+  type: "tertiary",
+  label: "Button",
   disabled: false,
   withIcon: false,
 };
 
 export const Ghost = Template.bind({});
 Ghost.args = {
-  type: 'ghost',
-  label: 'Button',
+  type: "ghost",
+  label: "Button",
   disabled: false,
   withIcon: false,
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
-  type: 'danger',
-  label: 'Button',
+  type: "danger",
+  label: "Button",
   disabled: false,
   withIcon: false,
 };

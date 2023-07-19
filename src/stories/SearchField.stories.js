@@ -1,22 +1,22 @@
-import { SearchField } from './SearchField';
+import { SearchField } from "./SearchField";
 
 export default {
-  title: 'Components/SearchField',
+  title: "Components/SearchField",
   component: SearchField,
   argTypes: {
     stateInput: {
       control: {
-        type: 'select',
-        options: ['disabled', 'filled', 'focus', 'default'],
+        type: "select",
+        options: ["disabled", "filled", "focus", "default"],
       },
     },
     hasError: {
-      control: 'boolean',
+      control: "boolean",
     },
-    textLabelAbove: { control: 'text' }, 
-    textLabelBelow: { control: 'text' }, 
-    textLabelError: { control: 'text' },
-    textPlaceholder: { control: 'text' },
+    textLabelAbove: { control: "text" },
+    textLabelBelow: { control: "text" },
+    textLabelError: { control: "text" },
+    textPlaceholder: { control: "text" },
   },
 };
 
@@ -26,10 +26,11 @@ export const Default = Template.bind({});
 Default.args = {
   helperText: true,
   label: true,
-  stateInput: 'default',
+  stateInput: "default",
+  onStateChange: (newState) => console.log(`State changed to ${newState}`),
   hasError: false,
-  textLabelAbove: 'Search', 
-  textLabelBelow: 'Helper text', 
-  textLabelError: 'Error text',
-  textPlaceholder: 'Search for ...'
+  textLabelAbove: "Search",
+  textLabelBelow: "Helper text",
+  textLabelError: "Error text",
+  textPlaceholder: "Search for ...",
 };

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is a comprehensive collection of React components that are being designed and developed for a web application. It is being undertaken as a summer project with a focus on delivering reusable, highly customizable, and accessible components. 
+This project is a comprehensive collection of React components that are being designed and developed for a web application. It is being undertaken as a summer project with a focus on delivering reusable, highly customizable, and accessible components.
 
 ## Project Overview
 
@@ -12,8 +12,8 @@ The primary objective of this project is to construct a reliable set of reusable
 
 This project is developed using a robust set of technologies, including:
 
-- **React:** The library of choice for building user interfaces in JavaScript. 
-- **Storybook:** An open-source tool that provides a sandbox to build and test UI components in isolation. 
+- **React:** The library of choice for building user interfaces in JavaScript.
+- **Storybook:** An open-source tool that provides a sandbox to build and test UI components in isolation.
 - **Chromatic:** A powerful continuous integration tool that automates visual testing for Storybook. It helps catch visual changes, reducing the manual QA process.
 
 ## Methodology
@@ -35,11 +35,11 @@ The future direction of this project includes:
 
 ## Author
 
-This project is authored by __Karsten Bak Malle__.
+This project is authored by **Karsten Bak Malle**.
 
 ## Acknowledgements
 
-This project is a part of a summer program aiming to enhance practical understanding and hands-on experience in front-end development. 
+This project is a part of a summer program aiming to enhance practical understanding and hands-on experience in front-end development.
 
 ## Contributing
 

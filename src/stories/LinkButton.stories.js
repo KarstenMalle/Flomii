@@ -1,19 +1,19 @@
-import { LinkButton } from './LinkButton';
+import { LinkButton } from "./LinkButton";
 
 export default {
-  title: 'Example/LinkButton',
+  title: "Example/LinkButton",
   component: LinkButton,
   argTypes: {
     type: {
       control: {
-        type: 'select',
-        options: ['default', 'neutral'],
+        type: "select",
+        options: ["default", "neutral"],
       },
     },
     size: {
       control: {
-        type: 'select',
-        options: ['small', 'medium'],
+        type: "select",
+        options: ["small", "medium"],
       },
     },
   },
@@ -23,9 +23,9 @@ const Template = (args) => <LinkButton {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  type: 'default',
-  size: 'medium',
-  label: 'Button',
+  type: "default",
+  size: "medium",
+  label: "Button",
   disabled: false,
   leftIcon: true,
   rightIcon: true,
@@ -33,13 +33,12 @@ Default.args = {
 
 export const Neutral = Template.bind({});
 Neutral.args = {
-  type: 'neutral',
-  size: 'medium',
-  label: 'Button',
+  type: "neutral",
+  size: "medium",
+  label: "Button",
   disabled: false,
   leftIcon: true,
   rightIcon: true,
 };
-
 
 // add other button types and variations similarly

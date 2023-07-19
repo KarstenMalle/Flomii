@@ -59,7 +59,6 @@
   background: var(--colour-button-link-hover-bg);
   color: var(--colour-button-link-hover-fg);
   text-decoration-line: underline;
-
 }
 .link-button--neutral:hover {
   border: 1px solid var(--colour-button-link-neutral-hover-border);

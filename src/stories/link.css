@@ -34,7 +34,6 @@
   line-height: var(--label-lg-regular-line-height);
 }
 
-
 /* Hover states for each button type */
 .link--default:hover {
   color: var(--colour-fg-interactive);
@@ -47,7 +46,6 @@
   color: var(--colour-fg-interactive);
   outline: none;
 }
-
 
 /* Press states for each button type */
 .link--default:active {

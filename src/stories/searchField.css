@@ -64,14 +64,12 @@
 }
 
 .search .has-error-true.state-focus {
-
   /* focus/default */
   box-shadow: var(--focus-danger);
   outline: none;
 }
 
 .search .input-field {
-
   border: 0px;
   outline: none;
 
@@ -88,7 +86,6 @@
 
 .search .state-focus .input-field {
   color: var(--colour-fg-default);
-
 }
 
 .search .search-icon {
@@ -119,12 +116,25 @@
   width: 100%;
 }
 
-.search-icon, .x-close {
+.search-icon,
+.x-close {
   flex: 0 0 auto;
+  /* You can use the margin property to apply equal spacing on left and right side */
+  margin: 0 var(--spacing-space-3);
+}
+
+.input-field.has-close-icon {
+  flex: 1 0 calc(100% - var(--icon-size-md) - 3 * var(--spacing-space-3)); /* subtract icon's width and margins */
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .input-field {
   flex: 1 0 auto;
-  margin-left: var(--spacing-space-3); /* adjust these margins to your needs */
-  margin-right: var(--spacing-space-3); /* adjust these margins to your needs */
+  transition: flex-basis 0.3s ease; /* animate the size change */
 }

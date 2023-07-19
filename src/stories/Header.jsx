@@ -1,58 +1,59 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { ReactComponent as HeartOutline } from "./assets/icons/heart-outline.svg";
 import { IconButton } from "./IconButton";
-import { Link } from "./Link";
-import { Logo } from "./assets/icons/FlomiiLogo.svg";
 import { NavigationBar } from "./NavigationBar";
-import { ReactComponent as ShoppingBag03 } from "./assets/icons/shopping-bag-03.svg";
-import { ReactComponent as User03 } from "./assets/icons/user-03.svg";
+import { SearchField } from "./SearchField";
 import "./header.css";
 
 export const Header = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
   screenSize,
-  className,
-  iconButtonIcon = <User03 className="icon-instance-node" color="#46070B" />,
-  override = <HeartOutline className="icon-instance-node" color="#46070B" />,
-  iconButtonIcon1 = <ShoppingBag03 className="icon-instance-node" color="#46070B" />,
+  icon1: Icon1,
+  icon2: Icon2,
+  icon3: Icon3,
+  logo: Logo,
 }) => {
   return (
-    <div className={`header-desktop ${className}`}>
+    <div className={`header-${screenSize}`}>
       {screenSize === "desktop-large" && (
         <>
-          <div className="div">
+          <div className="container">
             <div className="logo-wrapper">
               <Logo className="logo-instance" logo="logo.svg" />
             </div>
             <div className="search-wrapper">
-            
+              <SearchField
+                helperText={false}
+                hasError={false}
+                label={false}
+                textPlaceholder="Search for a product, brand..."
+              />
             </div>
             <div className="buttons">
-              <IconButton icon={iconButtonIcon} size="medium" state="default" type="ghost" />
-              <IconButton icon={override} size="medium" state="default" type="ghost" />
-              <IconButton icon={iconButtonIcon1} size="medium" state="default" type="ghost" />
+              <IconButton
+                size="medium"
+                state="default"
+                type="ghost"
+                icon={Icon1}
+              />
+              <IconButton
+                size="medium"
+                state="default"
+                type="ghost"
+                icon={Icon2}
+              />
+              <IconButton
+                size="medium"
+                state="default"
+                type="ghost"
+                icon={Icon3}
+              />
             </div>
           </div>
-          <div className="container-wrapper">
-            <div className="nav-wrapper">
-              <div className="nav-2">
-                <Link size="medium" state="default" />
-                <Link size="medium" state="default" />
-                <Link size="medium" state="default" />
-                <Link size="medium" state="default" />
-                <Link size="medium" state="default" />
-                <Link size="medium" state="default" />
-                <Link size="medium" state="default" />
-                <Link size="medium" state="default" />
-                <Link size="medium" state="default" />
-                <Link size="medium" state="default" />
-              </div>
-            </div>
-          </div>
+          <NavigationBar
+            linkLabel={"Link"}
+            width={screenSize}
+            linkSize={"large"}
+          />
         </>
       )}
 
@@ -63,15 +64,38 @@ export const Header = ({
               <Logo className="logo-instance" logo="image.svg" />
             </div>
             <div className="search-wrapper">
-              
+              <SearchField
+                helperText={false}
+                textPlaceholder="Search for a product, brand..."
+              />
             </div>
             <div className="buttons">
-              <IconButton icon={iconButtonIcon} size="medium" state="default" type="ghost" />
-              <IconButton icon={override} size="medium" state="default" type="ghost" />
-              <IconButton icon={iconButtonIcon1} size="medium" state="default" type="ghost" />
+              <IconButton
+                size="medium"
+                state="default"
+                type="ghost"
+                icon={Icon1}
+              />
+              <IconButton
+                size="medium"
+                state="default"
+                type="ghost"
+                icon={Icon2}
+              />
+              <IconButton
+                size="medium"
+                state="default"
+                type="ghost"
+                icon={Icon3}
+              />
             </div>
           </div>
-          <NavigationBar className="instance-node" visible={false} visible1={false} width="full" />
+          <NavigationBar
+            className="instance-node"
+            visible={false}
+            visible1={false}
+            width="full"
+          />
         </>
       )}
     </div>
@@ -79,15 +103,17 @@ export const Header = ({
 };
 
 Header.propTypes = {
-  user: PropTypes.shape({
-    name: PropTypes.string,
-  }),
-  onLogin: PropTypes.func,
-  onLogout: PropTypes.func,
-  onCreateAccount: PropTypes.func,
   screenSize: PropTypes.oneOf(["full", "desktop-large"]),
+  logo: PropTypes.elementType,
+  icon1: PropTypes.elementType,
+  icon2: PropTypes.elementType,
+  icon3: PropTypes.elementType,
 };
 
 Header.defaultProps = {
-  user: null,
+  screenSize: "full",
+  logo: () => {},
+  icon1: () => {},
+  icon2: () => {},
+  icon3: () => {},
 };

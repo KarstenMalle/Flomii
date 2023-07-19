@@ -1,45 +1,52 @@
 @import "variables.css";
 
-.navigation-bar {
-  align-items: center;
-  background-color: #f7f5f3;
+.navigation-bar-full {
   display: flex;
-  justify-content: center;
   padding: 4px 0px;
-  position: relative;
-  width: 1320px;
+  justify-content: center;
+  align-items: center;
+  background: var(--colour-bg-body-alt);
 }
 
-.navigation-bar .container {
-  align-items: flex-start;
+.navigation-bar-full .nav-container {
   display: flex;
+  padding: 0px var(--spacing-space-8);
   flex-direction: column;
   justify-content: center;
-  padding: 0px 24px;
-  position: relative;
+  align-items: flex-start;
+  flex: 1 0 0;
 }
 
-.navigation-bar .nav {
-  align-items: center;
+.navigation-bar-full .nav-container .nav {
   display: flex;
-  justify-content: flex-end;
-  position: relative;
-  width: fit-content;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-space-6);
 }
 
-.navigation-bar .full {
-  flex: 1;
+.navigation-bar-desktop-large {
+  display: flex;
+  padding: var(--spacing-space-2) 0px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  background: var(--colour-bg-body-alt);
 }
 
-.navigation-bar .desktop-large {
-  width: 1320px;
+.navigation-bar-desktop-large .nav-container {
+  display: flex;
+  padding: 0px var(--spacing-space-8);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
 }
 
-.navigation-bar .container.full .nav {
-  gap: 16px;
+.navigation-bar-desktop-large .nav-container .nav {
+  display: flex;
+  width: calc(var(--grid-breakpoint-2-xl) - var(--spacing-space-8) * 2);
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-space-8);
 }
-
-.navigation-bar .container.desktop-large .nav {
-  gap: 24px;
-}
-

@@ -1,71 +1,41 @@
-.header.desktop-large {
-  width: 1024px; /* adjust as necessary */
-  margin: 0 auto; /* centers the header */
-}
+@import "variables.css";
 
-.header.full {
+.header-desktop-large {
   display: flex;
-  width: 1320px;
-  min-width: 992px;
-  max-width: 1320px;
+  min-width: var(--grid-breakpoint-2-xl);
   flex-direction: column;
   align-items: center;
-  background: var(--color-bg-default);
+  background: var(--colour-bg-default);
 }
 
-.header.full .header-container {
+.header-desktop-large .container {
   display: flex;
-  padding: var(--spacing-space-8, 24px);
+  width: calc(var(--grid-breakpoint-2-xl) - var(--spacing-space-8) * 2);
+  padding: var(--spacing-space-8);
   align-items: flex-end;
-  gap: var(--spacing-space-11, 48px);
-  align-self: stretch;
+  gap: var(--spacing-space-11);
 }
 
-.header.full .header-container .logo-icon {
+.header-desktop-large .container .logo-instance {
   display: flex;
   padding: 12px 12px 0px 0px;
   flex-direction: column;
   align-items: flex-start;
-  
-}
-
-.header.full .header-container .header-middle {
-  display: flex;
-  padding-right: var(--spacing-space-11, 0px);
-  flex-direction: column;
-  align-items: flex-end;
-  flex: 1 0 0;
-}
-
-.header.full .header-container .header-middle .search-field {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-self: stretch;
-  
-}
-
-.header.full .header-container .header-middle .search-field .input {
-  display: flex;
-  padding: var(--spacing-space-4, 8px) var(--spacing-space-11, 48px) var(--spacing-space-4, 8px) var(--spacing-space-6, 16px);
-  align-items: center;
-  gap: var(--spacing-space-3, 6px);
-  align-self: stretch;
-  border-radius: var(--border-radius-round, 999px);
-  border: 1px solid var(--colour-border-strong, #8D8A88);
-  background: var(--colour-bg-field, #FFF);
-  
-}
-
-.logo-icon {
   width: 132px;
   height: 40px;
-}
+ }
 
-.header-middle {
+ .header-desktop-large .container .search-wrapper {
   display: flex;
+  padding-right: var(--spacing-space-11);
   flex-direction: column;
+  flex: 1 0 0;
+ }
+
+ .header-desktop-large .container .buttons {
+  display: flex;
+  justify-content: flex-end;
   align-items: flex-start;
-  align-self: stretch;
-}
+  gap: var(--spacing-space-8, 24px);
+ }
 
