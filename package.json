@@ -20,8 +20,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_8962cfade55842e",
-    "clean": "rimraf node_modules",
-    "clear": "rimraf node_modules",
+    "clean": "rimraf node_modules yarn.lock",
+    "clear": "rimraf node_modules yarn.lock",
     "format": "prettier --write ."
   },
   "eslintConfig": {
