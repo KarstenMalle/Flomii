@@ -58,7 +58,7 @@ export const SearchField = ({
 
   return (
     <div className={`search`}>
-      {label && <label className="form-label">{textLabelAbove}</label>}
+      {label && <label className={`form-label ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelAbove}</label>}
 
       <div className={`has-error-${hasError} state-${state}`}>
         <div className="input-wrapper">
@@ -85,10 +85,10 @@ export const SearchField = ({
         </div>
       </div>
 
-      {hasError && <label className="form-error-text">{textLabelError}</label>}
+      {hasError && <label className={`form-error-text ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelError}</label>}
 
       {!hasError && helperText && (
-        <label className="form-helper-text">{textLabelBelow}</label>
+        <label className={`form-helper-text ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelBelow}</label>
       )}
     </div>
   );

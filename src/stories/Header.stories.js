@@ -7,29 +7,12 @@ import { ReactComponent as CartIcon } from "./assets/icons/shopping-bag-03.svg";
 export default {
   title: "Components/Header",
   component: Header,
-  argTypes: {
-    screenSize: {
-      control: {
-        type: "select",
-        options: ["full", "desktop-large"],
-      },
-    },
-  },
 };
 
 const Template = (args) => <Header {...args} />;
 
-export const Full = Template.bind({});
-Full.args = {
-  screenSize: "full",
-  logo: LogoIcon,
-  icon1: ProfileIcon,
-  icon2: HeartIcon,
-  icon3: CartIcon,
-};
-
-export const DesktopLarge = Template.bind({});
-DesktopLarge.args = {
+export const Default = Template.bind({});
+Default.args = {
   screenSize: "desktop-large",
   logo: LogoIcon,
   icon1: ProfileIcon,

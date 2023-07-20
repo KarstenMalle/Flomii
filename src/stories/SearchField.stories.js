@@ -20,7 +20,8 @@ export default {
   },
 };
 
-const Template = (args) => <SearchField {...args} />;
+const Template = (args) => <SearchField key={Date.now()} {...args} />;
+
 
 export const Default = Template.bind({});
 Default.args = {

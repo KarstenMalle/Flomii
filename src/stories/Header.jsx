@@ -13,13 +13,14 @@ export const Header = ({
   logo: Logo,
 }) => {
   return (
-    <div className={`header-${screenSize}`}>
-      {screenSize === "desktop-large" && (
-        <>
+    <div className={`header`}>
           <div className="container">
             <div className="logo-wrapper">
-              <Logo className="logo-instance" logo="logo.svg" />
+              <a href="/" className="logo-instance">
+                <Logo logo="logo.svg" />
+              </a>
             </div>
+
             <div className="search-wrapper">
               <SearchField
                 helperText={false}
@@ -54,56 +55,11 @@ export const Header = ({
             width={screenSize}
             linkSize={"large"}
           />
-        </>
-      )}
-
-      {screenSize === "full" && (
-        <>
-          <div className="container-2">
-            <div className="logo-wrapper">
-              <Logo className="logo-instance" logo="image.svg" />
-            </div>
-            <div className="search-wrapper">
-              <SearchField
-                helperText={false}
-                textPlaceholder="Search for a product, brand..."
-              />
-            </div>
-            <div className="buttons">
-              <IconButton
-                size="medium"
-                state="default"
-                type="ghost"
-                icon={Icon1}
-              />
-              <IconButton
-                size="medium"
-                state="default"
-                type="ghost"
-                icon={Icon2}
-              />
-              <IconButton
-                size="medium"
-                state="default"
-                type="ghost"
-                icon={Icon3}
-              />
-            </div>
-          </div>
-          <NavigationBar
-            className="instance-node"
-            visible={false}
-            visible1={false}
-            width="full"
-          />
-        </>
-      )}
     </div>
   );
 };
 
 Header.propTypes = {
-  screenSize: PropTypes.oneOf(["full", "desktop-large"]),
   logo: PropTypes.elementType,
   icon1: PropTypes.elementType,
   icon2: PropTypes.elementType,
@@ -111,7 +67,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  screenSize: "full",
+  screenSize: "desktop-large",
   logo: () => {},
   icon1: () => {},
   icon2: () => {},
