@@ -1,41 +1,18 @@
 @import "variables.css";
 
-.navigation-bar-full {
-  display: flex;
-  padding: 4px 0px;
-  justify-content: center;
-  align-items: center;
-  align-self: stretch;
-  background: var(--colour-bg-body-alt);
-}
+/* Desktop-Large */
 
-.navigation-bar-full .nav-container {
+.navigation-bar {
   display: flex;
-  padding: 0px var(--spacing-space-8);
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  flex: 1 0 0;
-}
-
-.navigation-bar-full .nav-container .nav {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: var(--spacing-space-6);
-}
-
-.navigation-bar-desktop-large {
-  display: flex;
+  min-width: var(--grid-breakpoint-2-xl);
   padding: var(--spacing-space-2) 0px;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-
   background: var(--colour-bg-body-alt);
+  border: 1px solid blue;
+  align-self: stretch;
 }
 
-.navigation-bar-desktop-large .nav-container {
+.navigation-bar .nav-container {
   display: flex;
   padding: 0px var(--spacing-space-8);
   flex-direction: column;
@@ -44,10 +21,41 @@
   
 }
 
-.navigation-bar-desktop-large .nav-container .nav {
+.navigation-bar .nav-container .nav {
   display: flex;
   width: calc(var(--grid-breakpoint-2-xl) - var(--spacing-space-8) * 2);
   justify-content: flex-start;
   align-items: center;
   gap: var(--spacing-space-8);
+}
+
+/* Full */
+
+@media (max-width: 1320px) {
+.navigation-bar {
+  display: flex;
+  min-width: var(--grid-breakpoint-lg);
+  max-width: var(--grid-breakpoint-2-xl);
+  padding: 4px 0px;
+  align-items: center;
+  align-self: stretch;
+  background: var(--colour-bg-body-alt);
+  border: 1px solid red;
+}
+
+.navigation-bar .nav-container {
+  display: flex;
+  padding: 0px var(--spacing-space-8);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1 0 0;
+}
+
+.navigation-bar .nav-container .nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-space-6);
+}
 }

@@ -52,7 +52,6 @@ export const Header = ({
           </div>
           <NavigationBar
             linkLabel={"Link"}
-            width={screenSize}
             linkSize={"large"}
           />
     </div>
@@ -67,7 +66,6 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  screenSize: "desktop-large",
   logo: () => {},
   icon1: () => {},
   icon2: () => {},
