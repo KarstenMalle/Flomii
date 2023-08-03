@@ -13,7 +13,6 @@ const Template = (args) => <Header {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  screenSize: "desktop-large",
   logo: LogoIcon,
   icon1: ProfileIcon,
   icon2: HeartIcon,
