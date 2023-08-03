@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import "./searchField.css";
-import { ReactComponent as SearchIcon } from "./assets/icons/search-md.svg";
-import { ReactComponent as SearchXIcon } from "./assets/icons/search-x.svg";
+import "./textInput.css";
 
-export const SearchField = ({
+export const TextInput = ({
   helperText,
   label,
   stateInput,
@@ -14,6 +12,10 @@ export const SearchField = ({
   textLabelBelow,
   textLabelError,
   textPlaceholder,
+  startIcon: StartIcon,
+  endIcon: EndIcon,
+  showStartIcon,
+  showEndIcon,
 }) => {
   const [value, setValue] = useState("");
   const [placeholder, setPlaceholder] = useState(textPlaceholder);
@@ -35,12 +37,6 @@ export const SearchField = ({
     }
   };
 
-  const clearInput = () => {
-    setValue("");
-    onStateChange?.("default");
-    setState("default");
-  };
-
   const handleFocus = () => {
     setPlaceholder("");
     onStateChange?.("focus");
@@ -56,63 +52,35 @@ export const SearchField = ({
   };
 
   return (
-    <div className={`search`}>
+    <div className={`text`}>
+      {label && <label className={`form-label ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelAbove}</label>}
       <div className={`has-error-${hasError} state-${state}`}>
-        {label && (
-          <label
-            className={`form-label ${state === "disabled" ? "disabled" : ""}`}
-          >
-            {textLabelAbove}
-          </label>
-        )}
-
         <div className="input-wrapper">
-          <SearchIcon className="search-icon" />
+        {showStartIcon && <StartIcon className="start-icon" />}
           <input
             value={value}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            className={`input-field ${value !== "" ? "has-close-icon" : ""}`}
+            className={`input-field`}
             disabled={state === "disabled"}
             placeholder={placeholder}
           />
-          {value !== "" && (
-            <button onClick={clearInput} className="clear-button">
-              {" "}
-              {}
-              <SearchXIcon className="x-close" />
-            </button>
-          )}
-        
+          {showEndIcon && <EndIcon className="end-icon" />}
+        </div>
       </div>
 
-      {hasError && (
-        <label
-          className={`form-error-text ${
-            state === "disabled" ? "disabled" : ""
-          }`}
-        >
-          {textLabelError}
-        </label>
-      )}
+      {hasError && <label className={`form-error-text ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelError}</label>}
 
       {!hasError && helperText && (
-        <label
-          className={`form-helper-text ${
-            state === "disabled" ? "disabled" : ""
-          }`}
-        >
-          {textLabelBelow}
-        </label>
+        <label className={`form-helper-text ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelBelow}</label>
       )}
-      </div>
     </div>
   );
 };
 
-SearchField.propTypes = {
+TextInput.propTypes = {
   helperText: PropTypes.bool,
   label: PropTypes.bool,
   stateInput: PropTypes.oneOf(["disabled", "filled", "focus", "default"]),
@@ -122,4 +90,8 @@ SearchField.propTypes = {
   textLabelBelow: PropTypes.string,
   textLabelError: PropTypes.string,
   textPlaceholder: PropTypes.string,
+  startIcon: PropTypes.elementType,
+  endIcon: PropTypes.elementType,
+  showStartIcon: PropTypes.bool,
+  showEndIcon: PropTypes.bool,
 };

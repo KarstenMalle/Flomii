@@ -1,7 +1,7 @@
 import { Link } from "./Link";
 
 export default {
-  title: "Example/Link",
+  title: "Components/Link",
   component: Link,
   argTypes: {
     size: {

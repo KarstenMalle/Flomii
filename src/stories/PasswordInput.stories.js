@@ -1,8 +1,8 @@
-import { SearchField } from "./SearchField";
+import { PasswordInput } from "./PasswordInput";
 
 export default {
-  title: "Components/Fields/SearchField",
-  component: SearchField,
+  title: "Components/Fields/PasswordInput",
+  component: PasswordInput,
   argTypes: {
     stateInput: {
       control: {
@@ -20,7 +20,7 @@ export default {
   },
 };
 
-const Template = (args) => <SearchField key={Date.now()} {...args} />;
+const Template = (args) => <PasswordInput key={Date.now()} {...args} />;
 
 
 export const Default = Template.bind({});

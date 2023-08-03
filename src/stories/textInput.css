@@ -1,0 +1,125 @@
+@import "variables.css";
+
+.text {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.text label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--colour-fg-muted);
+
+  font-family: var(--label-sm-regular-font-family);
+  font-size: var(--label-sm-regular-font-size);
+  font-style: var(--label-sm-regular-font-style);
+  font-weight: var(--label-sm-regular-font-weight);
+  line-height: var(--label-sm-regular-line-height);
+}
+
+.text .form-label {
+  padding-bottom: var(--spacing-space-3);
+}
+
+.text .form-helper-text,
+.text .form-error-text {
+  padding-top: var(--spacing-space-3);
+}
+
+.text .form-error-text {
+  color: var(--colour-fg-danger);
+}
+
+.text .has-error-false,
+.text .has-error-true {
+  display: flex;
+  padding: var(--spacing-space-4) var(--spacing-space-11) var(--spacing-space-4)
+    var(--spacing-space-6);
+  align-items: center;
+  gap: var(--spacing-space-3);
+  align-self: stretch;
+  border-radius: var(--border-radius-round);
+  background: var(--colour-bg-field);
+}
+
+.text .has-error-false {
+  border: 1px solid var(--colour-border-strong);
+} 
+
+.text .has-error-true {
+  border: 1px solid var(--colour-border-danger);
+}
+
+.text .has-error-false.state-focus {
+  border-color: var(--colour-border-interactive);
+
+  /* focus/default */
+  box-shadow: var(--focus-default);
+  outline: none;
+}
+
+.text .has-error-true.state-focus {
+  /* focus/default */
+  box-shadow: var(--focus-danger);
+  outline: none;
+}
+
+.text .has-error-false.state-disabled, .label.disabled, .form-label.disabled, .form-error-text.disabled, .form-helper-text.disabled {
+  opacity: 0.3;
+}
+
+.text .input-field {
+  border: 0px;
+  outline: none;
+
+  font-family: var(--label-md-regular-font-family);
+  font-size: var(--label-md-regular-font-size);
+  font-style: var(--label-md-regular-font-style);
+  font-weight: var(--label-md-regular-font-weight);
+  line-height: var(--label-md-regular-line-height);
+}
+
+.text .input-field::placeholder {
+  color: var(--colour-fg-placeholder);
+}
+
+.text .state-focus .input-field {
+  color: var(--colour-fg-default);
+}
+
+.text .typing-indicator-instance {
+  min-width: 1px !important;
+  position: relative !important;
+  width: unset !important;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.input-field {
+  flex: 1 0 auto;
+  transition: flex-basis 0.3s ease; /* animate the size change */
+}
+
+
+.text .start-icon,
+.text .end-icon {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  cursor: pointer;
+}
+
+.start-icon,
+.end-icon {
+  flex: 0 0 auto;
+  /* You can use the margin property to apply equal spacing on left and right side */
+  margin: 0 var(--spacing-space-3);
+}

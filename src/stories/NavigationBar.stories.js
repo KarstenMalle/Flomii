@@ -4,12 +4,6 @@ export default {
   title: "Components/NavigationBar",
   component: NavigationBar,
   argTypes: {
-    width: {
-      control: {
-        type: "select",
-        options: ["full", "desktop-large"],
-      },
-    },
     linkSize: {
       control: {
         type: "select",
@@ -26,7 +20,6 @@ const Template = (args) => <NavigationBar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  width: "full",
   linkSize: "large",
   linkLabel: "Link",
 };

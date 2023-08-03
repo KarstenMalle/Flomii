@@ -1,7 +1,7 @@
 @import "variables.css";
 
 .icon-button {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   border-radius: var(--border-radius-round);
@@ -193,4 +193,56 @@
   border: 1px solid var(--colour-button-danger-default-border);
   opacity: 0.30000001192092896;
   background: var(--colour-button-danger-default-bg);
+}
+
+/* Notification css */
+
+.icon-button-notification--small {
+  display: flex;
+  width: 8px;
+  height: 8px;
+  padding: 3px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: -20px;
+  top: -39px;
+  border-radius: 100px;
+  background: var(--colour-bg-interactive, #CD1127);
+}
+
+.icon-button-notification--small .notification-label {
+  color: var(--colour-fg-on-colour, #FFF);
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Work Sans;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 12px */
+}
+
+.icon-button-notification--medium {
+  display: flex;
+  width: 12px;
+  height: 12px;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: -24px;
+  top: -48px;
+  border-radius: 100px;
+  background: var(--colour-bg-interactive, #CD1127);
+}
+
+.icon-button-notification--medium .notification-label {
+  color: var(--colour-fg-on-colour, #FFF);
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Work Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 12px */
 }

@@ -1,7 +1,7 @@
 import { LinkButton } from "./LinkButton";
 
 export default {
-  title: "Example/LinkButton",
+  title: "Components/LinkButton",
   component: LinkButton,
   argTypes: {
     type: {

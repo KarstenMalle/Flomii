@@ -2,7 +2,10 @@ import PropTypes from "prop-types";
 import React from "react";
 import { IconButton } from "./IconButton";
 import { NavigationBar } from "./NavigationBar";
-import { SearchField } from "./SearchField";
+import { SearchInput } from "./SearchInput";
+import { ReactComponent as StartIcon } from "./assets/icons/search-md.svg";
+import { ReactComponent as EndIcon } from "./assets/icons/search-x.svg";
+
 import "./header.css";
 
 export const Header = ({
@@ -22,11 +25,13 @@ export const Header = ({
             </div>
 
             <div className="search-wrapper">
-              <SearchField
-                helperText={false}
-                hasError={false}
-                label={false}
-                textPlaceholder="Search for a product, brand..."
+              <SearchInput
+                helperBool={false}
+                errorBool={false}
+                labelBool={false}
+                placeholderInput="Search for a product, brand..."
+                startIcon={StartIcon}
+                endIcon={EndIcon}
               />
             </div>
             <div className="buttons">
