@@ -56,39 +56,48 @@ export const SearchInput = ({
   };
 
   return (
-      <div className={`search`}>
-          {labelBool && <label className={`form-label`}>{label}</label>}
-          <div className={`state-${state} has-error-${errorBool}`}>
-            <div className={`input-search`}>
-              <StartIcon className="start-icon" />
-              <input
-                value={value}
-                onChange={handleInputChange}
-                onKeyDown={handleKeyDown}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                className={`text`}
-                disabled={state === "disabled"}
-                placeholder={placeholder}
-              />
-              {value !== "" && (
-                <button onClick={clearInput} className="clear-button-shown">
-                  {" "}
-                  {}
-                  <EndIcon className="end-icon" />
-                </button>
-              )}
-
-
-            </div>
-          </div>
-          {helperBool && !errorBool && (
-            <label className={`form-helper`}>{helper}</label>
-          )}
-          {errorBool && !helperBool && (
-            <label className={`form-error`}>{error}</label>
+    <div className={`search`}>
+      {labelBool && state != "disabled" && (
+        <label className={`form-label`}>{label}</label>
+      )}
+      {labelBool && state === "disabled" && (
+        <label className={`form-label-disabled`}>{label}</label>
+      )}
+      <div className={`state-${state} has-error-${errorBool}`}>
+        <div className={`input-search`}>
+          <StartIcon className="start-icon" />
+          <input
+            value={value}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            className={`text`}
+            disabled={state === "disabled"}
+            placeholder={placeholder}
+          />
+          {value !== "" && (
+            <button onClick={clearInput} className="clear-button-shown">
+              {" "}
+              {}
+              <EndIcon className="end-icon" />
+            </button>
           )}
         </div>
+      </div>
+      {helperBool && !errorBool && state != "disabled" && (
+        <label className={`form-helper`}>{helper}</label>
+      )}
+      {helperBool && !errorBool && state === "disabled" && (
+        <label className={`form-helper-disabled`}>{helper}</label>
+      )}
+      {errorBool && !helperBool && state != "disabled" && (
+        <label className={`form-error`}>{error}</label>
+      )}
+      {errorBool && !helperBool && state === "disabled" && (
+        <label className={`form-error-disabled`}>{error}</label>
+      )}
+    </div>
   );
 };
 

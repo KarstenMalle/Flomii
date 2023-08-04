@@ -31,8 +31,6 @@
 
 .header .container .search-wrapper {
   flex-grow: 1;
-  overflow: hidden;
-
 }
 
 .header .container .buttons {
@@ -73,9 +71,7 @@
   }
   
   .header .container .search-wrapper {
-    overflow: hidden;
     flex-grow: 1;
-
   }
   
   .header .container .buttons {
