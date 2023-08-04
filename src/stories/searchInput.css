@@ -77,7 +77,7 @@
 }
 
 .search .form-helper,
-.search .form-error {
+.search .form-error, .form-helper-disabled, .form-error-disabled {
   padding-top: var(--spacing-space-3);
   display: flex;
 }
