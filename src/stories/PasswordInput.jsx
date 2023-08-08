@@ -3,19 +3,23 @@ import PropTypes from "prop-types";
 import "./passwordInput.css";
 
 export const PasswordInput = ({
-  helperText,
   label,
+  labelBool,
+  helper,
+  helperBool,
+  error,
+  errorBool,
   stateInput,
+  statePwInput,
+  showIcon: ShowIcon,
+  hideIcon: HideIcon,
   onStateChange,
-  hasError,
-  textLabelAbove,
-  textLabelBelow,
-  textLabelError,
-  textPlaceholder,
+  placeholderInput,
 }) => {
   const [value, setValue] = useState("");
-  const [placeholder, setPlaceholder] = useState(textPlaceholder);
+  const [placeholder, setPlaceholder] = useState(placeholderInput);
   const [state, setState] = useState(stateInput);
+  const [statePw, setStatePw] = useState(statePwInput)
 
   useEffect(() => {
     setState(stateInput);
@@ -33,6 +37,19 @@ export const PasswordInput = ({
     }
   };
 
+  const toggleInput = () => {
+    var x = document.getElementById("passwordInput");
+    if (x.type === "password") {
+      x.type = "text";
+      onStateChange?.("shown");
+      setStatePw("shown");
+    } else {
+      x.type = "password";
+      onStateChange?.("hidden");
+      setStatePw("hidden");
+    }
+  };
+
   const handleFocus = () => {
     setPlaceholder("");
     onStateChange?.("focus");
@@ -44,45 +61,65 @@ export const PasswordInput = ({
       onStateChange?.("default");
       setState("default");
     }
-    setPlaceholder(textPlaceholder);
+    setPlaceholder(placeholderInput);
   };
 
   return (
     <div className={`password`}>
-      {label && <label className={`form-label ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelAbove}</label>}
-
-      <div className={`has-error-${hasError} state-${state}`}>
-        <div className="input-wrapper">
+      {labelBool && state !== "disabled" && (
+        <label className={`form-label`}>{label}</label>
+      )}
+      {labelBool && state === "disabled" && (
+        <label className={`form-label-disabled`}>{label}</label>
+      )}
+      <div className={`state-${state} has-error-${errorBool}`}>
+        <div className={`input-password`}>
           <input
+            type="password"
             value={value}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            className={`input-field`}
+            className={`text`}
             disabled={state === "disabled"}
             placeholder={placeholder}
+            id="passwordInput"
           />
+          <button onClick={toggleInput} className="eye-button">
+            {" "}
+            {}
+            {statePw === "shown" && <ShowIcon className="password-show-icon" />}
+            {statePw === "hidden" && <HideIcon className="password-hide-icon" />}
+          </button>
         </div>
       </div>
-
-      {hasError && <label className={`form-error-text ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelError}</label>}
-
-      {!hasError && helperText && (
-        <label className={`form-helper-text ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelBelow}</label>
+      {helperBool && !errorBool && state !== "disabled" && (
+        <label className={`form-helper`}>{helper}</label>
+      )}
+      {helperBool && !errorBool && state === "disabled" && (
+        <label className={`form-helper-disabled`}>{helper}</label>
+      )}
+      {errorBool && !helperBool && state !== "disabled" && (
+        <label className={`form-error`}>{error}</label>
+      )}
+      {errorBool && !helperBool && state === "disabled" && (
+        <label className={`form-error-disabled`}>{error}</label>
       )}
     </div>
   );
 };
 
 PasswordInput.propTypes = {
-  helperText: PropTypes.bool,
-  label: PropTypes.bool,
+  label: PropTypes.string,
+  labelBool: PropTypes.bool,
+  helper: PropTypes.string,
+  helperBool: PropTypes.bool,
+  error: PropTypes.string,
+  errorBool: PropTypes.bool,
   stateInput: PropTypes.oneOf(["disabled", "filled", "focus", "default"]),
-  onStateChange: PropTypes.func.isRequired,
-  hasError: PropTypes.bool,
-  textLabelAbove: PropTypes.string,
-  textLabelBelow: PropTypes.string,
-  textLabelError: PropTypes.string,
-  textPlaceholder: PropTypes.string,
+  statePwInput: PropTypes.oneOf(["shown", "hidden"]),
+  showicon: PropTypes.elementType,
+  hideicon: PropTypes.elementType,
+  placeholderInput: PropTypes.string,
 };

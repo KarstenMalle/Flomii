@@ -5,6 +5,13 @@
 
   /* Typography styles */
 
+  /* Heading Desktop styles */
+  --text-desktop-heading-lg-medium-font-family: "Neco";
+  --text-desktop-heading-lg-medium-font-size: 18px;
+  --text-desktop-heading-lg-medium-font-style: normal;
+  --text-desktop-heading-lg-medium-font-weight: 500;
+  --text-desktop-heading-lg-medium-line-height: 24px;
+
   /* Small */
   --label-sm-regular-font-family: "Work Sans";
   --label-sm-regular-font-size: 14px;

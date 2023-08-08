@@ -3,22 +3,20 @@ import PropTypes from "prop-types";
 import "./textInput.css";
 
 export const TextInput = ({
-  helperText,
   label,
+  labelBool,
+  helper,
+  helperBool,
+  error,
+  errorBool,
   stateInput,
-  onStateChange,
-  hasError,
-  textLabelAbove,
-  textLabelBelow,
-  textLabelError,
-  textPlaceholder,
   startIcon: StartIcon,
   endIcon: EndIcon,
-  showStartIcon,
-  showEndIcon,
+  onStateChange,
+  placeholderInput,
 }) => {
   const [value, setValue] = useState("");
-  const [placeholder, setPlaceholder] = useState(textPlaceholder);
+  const [placeholder, setPlaceholder] = useState(placeholderInput);
   const [state, setState] = useState(stateInput);
 
   useEffect(() => {
@@ -37,6 +35,12 @@ export const TextInput = ({
     }
   };
 
+  const clearInput = () => {
+    setValue("");
+    onStateChange?.("default");
+    setState("default");
+  };
+
   const handleFocus = () => {
     setPlaceholder("");
     onStateChange?.("focus");
@@ -48,50 +52,64 @@ export const TextInput = ({
       onStateChange?.("default");
       setState("default");
     }
-    setPlaceholder(textPlaceholder);
+    setPlaceholder(placeholderInput);
   };
 
   return (
-    <div className={`text`}>
-      {label && <label className={`form-label ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelAbove}</label>}
-      <div className={`has-error-${hasError} state-${state}`}>
-        <div className="input-wrapper">
-        {showStartIcon && <StartIcon className="start-icon" />}
+    <div className={`search`}>
+      {labelBool && state !== "disabled" && (
+        <label className={`form-label`}>{label}</label>
+      )}
+      {labelBool && state === "disabled" && (
+        <label className={`form-label-disabled`}>{label}</label>
+      )}
+      <div className={`state-${state} has-error-${errorBool}`}>
+        <div className={`input-search`}>
+          <StartIcon className="start-icon" />
           <input
             value={value}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
             onFocus={handleFocus}
             onBlur={handleBlur}
-            className={`input-field`}
+            className={`text`}
             disabled={state === "disabled"}
             placeholder={placeholder}
           />
-          {showEndIcon && <EndIcon className="end-icon" />}
+          {value !== "" && (
+            <button onClick={clearInput} className="clear-button-shown">
+              {" "}
+              {}
+              <EndIcon className="end-icon" />
+            </button>
+          )}
         </div>
       </div>
-
-      {hasError && <label className={`form-error-text ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelError}</label>}
-
-      {!hasError && helperText && (
-        <label className={`form-helper-text ${state === 'disabled' ? 'disabled' : ''}`}>{textLabelBelow}</label>
+      {helperBool && !errorBool && state !== "disabled" && (
+        <label className={`form-helper`}>{helper}</label>
+      )}
+      {helperBool && !errorBool && state === "disabled" && (
+        <label className={`form-helper-disabled`}>{helper}</label>
+      )}
+      {errorBool && !helperBool && state !== "disabled" && (
+        <label className={`form-error`}>{error}</label>
+      )}
+      {errorBool && !helperBool && state === "disabled" && (
+        <label className={`form-error-disabled`}>{error}</label>
       )}
     </div>
   );
 };
 
 TextInput.propTypes = {
-  helperText: PropTypes.bool,
-  label: PropTypes.bool,
+  label: PropTypes.string,
+  labelBool: PropTypes.bool,
+  helper: PropTypes.string,
+  helperBool: PropTypes.bool,
+  error: PropTypes.string,
+  errorBool: PropTypes.bool,
   stateInput: PropTypes.oneOf(["disabled", "filled", "focus", "default"]),
-  onStateChange: PropTypes.func.isRequired,
-  hasError: PropTypes.bool,
-  textLabelAbove: PropTypes.string,
-  textLabelBelow: PropTypes.string,
-  textLabelError: PropTypes.string,
-  textPlaceholder: PropTypes.string,
   startIcon: PropTypes.elementType,
   endIcon: PropTypes.elementType,
-  showStartIcon: PropTypes.bool,
-  showEndIcon: PropTypes.bool,
+  placeholderInput: PropTypes.string,
 };

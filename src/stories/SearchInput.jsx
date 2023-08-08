@@ -57,7 +57,7 @@ export const SearchInput = ({
 
   return (
     <div className={`search`}>
-      {labelBool && state != "disabled" && (
+      {labelBool && state !== "disabled" && (
         <label className={`form-label`}>{label}</label>
       )}
       {labelBool && state === "disabled" && (
@@ -85,13 +85,13 @@ export const SearchInput = ({
           )}
         </div>
       </div>
-      {helperBool && !errorBool && state != "disabled" && (
+      {helperBool && !errorBool && state !== "disabled" && (
         <label className={`form-helper`}>{helper}</label>
       )}
       {helperBool && !errorBool && state === "disabled" && (
         <label className={`form-helper-disabled`}>{helper}</label>
       )}
-      {errorBool && !helperBool && state != "disabled" && (
+      {errorBool && !helperBool && state !== "disabled" && (
         <label className={`form-error`}>{error}</label>
       )}
       {errorBool && !helperBool && state === "disabled" && (

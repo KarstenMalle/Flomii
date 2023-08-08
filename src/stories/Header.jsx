@@ -4,7 +4,7 @@ import { IconButton } from "./IconButton";
 import { NavigationBar } from "./NavigationBar";
 import { SearchInput } from "./SearchInput";
 import { ReactComponent as StartIcon } from "./assets/icons/search-md.svg";
-import { ReactComponent as EndIcon } from "./assets/icons/search-x.svg";
+import { ReactComponent as EndIcon } from "./assets/icons/x-close.svg";
 
 import "./header.css";
 

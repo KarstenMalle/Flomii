@@ -64,17 +64,23 @@
   width: var(--icon-size-md);
   height: var(--icon-size-md);
   background: none;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
 }
 
 .search .clear-button-shown {
   overflow: hidden;
-  flex-grow: 0; 
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .search .form-helper,
 .search .form-error, .form-helper-disabled, .form-error-disabled {
@@ -135,8 +141,4 @@
   color: var(--colour-fg-default);
 }
 
-
-.input-field.has-close-icon {
-  flex: 1 0 calc(100% - var(--icon-size-md) - 3 * var(--spacing-space-3)); /* subtract icon's width and margins */
-}
 

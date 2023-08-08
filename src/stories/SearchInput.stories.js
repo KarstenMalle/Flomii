@@ -1,6 +1,6 @@
 import { SearchInput } from "./SearchInput";
 import { ReactComponent as StartIcon } from "./assets/icons/search-md.svg";
-import { ReactComponent as EndIcon } from "./assets/icons/search-x.svg";
+import { ReactComponent as EndIcon } from "./assets/icons/x-close.svg";
 
 export default {
   title: "Components/Fields/SearchInput",

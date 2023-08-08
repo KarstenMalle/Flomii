@@ -1,4 +1,6 @@
 import { PasswordInput } from "./PasswordInput";
+import { ReactComponent as ShowIcon } from "./assets/icons/eye.svg";
+import { ReactComponent as HideIcon } from "./assets/icons/eye-off.svg";
 
 export default {
   title: "Components/Fields/PasswordInput",
@@ -10,13 +12,25 @@ export default {
         options: ["disabled", "filled", "focus", "default"],
       },
     },
-    hasError: {
+    statePwInput: {
+      control: {
+        type: "select",
+        options: ["shown", "hidden"],
+      }
+    },
+    labelBool: {
       control: "boolean",
     },
-    textLabelAbove: { control: "text" },
-    textLabelBelow: { control: "text" },
-    textLabelError: { control: "text" },
-    textPlaceholder: { control: "text" },
+    helperBool: {
+      control: "boolean",
+    },
+    errorBool: {
+      control: "boolean",
+    },
+    label: { control: "text" },
+    helper: { control: "text" },
+    error: { control: "text" },
+    placeholderInput: { control: "text" },
   },
 };
 
@@ -25,13 +39,15 @@ const Template = (args) => <PasswordInput key={Date.now()} {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  helperText: true,
-  label: true,
   stateInput: "default",
-  onStateChange: (newState) => console.log(`State changed to ${newState}`),
-  hasError: false,
-  textLabelAbove: "Search",
-  textLabelBelow: "Helper text",
-  textLabelError: "Error text",
-  textPlaceholder: "Search for ...",
+  statePwInput: "hidden",
+  label: "Password",
+  labelBool: true,
+  helper: "Helper text",
+  helperBool: true,
+  error: "Error text",
+  errorBool: false,
+  placeholderInput: "Enter password",
+  showIcon: ShowIcon,
+  hideIcon: HideIcon,
 };

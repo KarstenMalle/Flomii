@@ -1,6 +1,6 @@
 import { TextInput } from "./TextInput";
-import { ReactComponent as StartIcon } from "./assets/icons/user-03.svg";
-import { ReactComponent as EndIcon } from "./assets/icons/info-circle.svg";
+import { ReactComponent as StartIcon } from "./assets/icons/search-md.svg";
+import { ReactComponent as EndIcon } from "./assets/icons/x-close.svg";
 
 export default {
   title: "Components/Fields/TextInput",
@@ -12,19 +12,19 @@ export default {
         options: ["disabled", "filled", "focus", "default"],
       },
     },
-    hasError: {
+    labelBool: {
       control: "boolean",
     },
-    textLabelAbove: { control: "text" },
-    textLabelBelow: { control: "text" },
-    textLabelError: { control: "text" },
-    textPlaceholder: { control: "text" },
-    showStartIcon: {
+    helperBool: {
       control: "boolean",
     },
-    showEndIcon: {
+    errorBool: {
       control: "boolean",
     },
+    label: { control: "text" },
+    helper: { control: "text" },
+    error: { control: "text" },
+    placeholderInput: { control: "text" },
   },
 };
 
@@ -33,17 +33,14 @@ const Template = (args) => <TextInput key={Date.now()} {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  helperText: true,
-  label: true,
   stateInput: "default",
-  onStateChange: (newState) => console.log(`State changed to ${newState}`),
-  hasError: false,
-  textLabelAbove: "Label",
-  textLabelBelow: "Helper text",
-  textLabelError: "Error text",
-  textPlaceholder: "Placeholder",
+  label: "Label",
+  labelBool: true,
+  helper: "Helper text",
+  helperBool: true,
+  error: "Error text",
+  errorBool: false,
+  placeholderInput: "Placeholder",
   startIcon: StartIcon,
   endIcon: EndIcon,
-  showStartIcon: false,
-  showEndIcon: false,
 };

@@ -1,16 +1,9 @@
 @import "variables.css";
 
-.text {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-}
-
-.text label {
-  display: flex;
-  align-items: center;
+.search .form-label, .form-label-disabled {
+  padding-bottom: var(--spacing-space-3);
   gap: 6px;
+  display: flex;
 
   color: var(--colour-fg-muted);
 
@@ -21,61 +14,33 @@
   line-height: var(--label-sm-regular-line-height);
 }
 
-.text .form-label {
-  padding-bottom: var(--spacing-space-3);
-}
-
-.text .form-helper-text,
-.text .form-error-text {
-  padding-top: var(--spacing-space-3);
-}
-
-.text .form-error-text {
-  color: var(--colour-fg-danger);
-}
-
-.text .has-error-false,
-.text .has-error-true {
+.search .input-search {
   display: flex;
-  padding: var(--spacing-space-4) var(--spacing-space-11) var(--spacing-space-4)
-    var(--spacing-space-6);
-  align-items: center;
+  padding: var(--spacing-space-4) var(--spacing-space-6) var(--spacing-space-4) var(--spacing-space-6);
   gap: var(--spacing-space-3);
-  align-self: stretch;
-  border-radius: var(--border-radius-round);
   background: var(--colour-bg-field);
+  justify-content: space-between;
+  border-radius: var(--border-radius-round, 999px);
+  border: 1px solid var(--colour-border-strong, #8D8A88);
 }
 
-.text .has-error-false {
-  border: 1px solid var(--colour-border-strong);
-} 
-
-.text .has-error-true {
-  border: 1px solid var(--colour-border-danger);
+.search .input-search .start-icon {
+  overflow: hidden;
+  flex-grow: 0;
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  border: 1px solid transparent;
+  background: none;
+  cursor: pointer;
 }
 
-.text .has-error-false.state-focus {
-  border-color: var(--colour-border-interactive);
-
-  /* focus/default */
-  box-shadow: var(--focus-default);
-  outline: none;
-}
-
-.text .has-error-true.state-focus {
-  /* focus/default */
-  box-shadow: var(--focus-danger);
-  outline: none;
-}
-
-.text .has-error-false.state-disabled, .label.disabled, .form-label.disabled, .form-error-text.disabled, .form-helper-text.disabled {
-  opacity: 0.3;
-}
-
-.text .input-field {
-  border: 0px;
+.search .input-search .text {
+  overflow: hidden;
+  flex-grow: 1;
+  border: 1px solid transparent;
   outline: none;
 
+  color: var(--colour-fg-default);
   font-family: var(--label-md-regular-font-family);
   font-size: var(--label-md-regular-font-size);
   font-style: var(--label-md-regular-font-style);
@@ -83,43 +48,97 @@
   line-height: var(--label-md-regular-line-height);
 }
 
-.text .input-field::placeholder {
+.search .input-search .text::placeholder {
   color: var(--colour-fg-placeholder);
 }
 
-.text .state-focus .input-field {
-  color: var(--colour-fg-default);
-}
-
-.text .typing-indicator-instance {
+.search .typing-indicator-instance {
   min-width: 1px !important;
   position: relative !important;
   width: unset !important;
 }
 
-.input-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.input-field {
-  flex: 1 0 auto;
-  transition: flex-basis 0.3s ease; /* animate the size change */
-}
-
-
-.text .start-icon,
-.text .end-icon {
+.search .input-search .end-icon {
+  overflow: hidden;
+  flex-grow: 0; 
   width: var(--icon-size-md);
   height: var(--icon-size-md);
+  background: none;
+  border: 1px solid transparent;
   cursor: pointer;
 }
 
-.start-icon,
-.end-icon {
-  flex: 0 0 auto;
-  /* You can use the margin property to apply equal spacing on left and right side */
-  margin: 0 var(--spacing-space-3);
+.search .clear-button-shown {
+  overflow: hidden;
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+.search .form-helper,
+.search .form-error, .form-helper-disabled, .form-error-disabled {
+  padding-top: var(--spacing-space-3);
+  display: flex;
+}
+
+.search .form-helper, .form-helper-disabled {
+  color: var(--colour-fg-muted);
+
+  font-family: var(--label-sm-regular-font-family);
+  font-size: var(--label-sm-regular-font-size);
+  font-style: var(--label-sm-regular-font-style);
+  font-weight: var(--label-sm-regular-font-weight);
+  line-height: var(--label-sm-regular-line-height);
+}
+
+.search .form-error, .form-error-disabled {
+  color: var(--colour-fg-danger);
+
+  font-family: var(--label-sm-regular-font-family);
+  font-size: var(--label-sm-regular-font-size);
+  font-style: var(--label-sm-regular-font-style);
+  font-weight: var(--label-sm-regular-font-weight);
+  line-height: var(--label-sm-regular-line-height);
+}
+
+
+.search .has-error-false .input-search, .search .state-disabled.has-error-true .input-search {
+  border-color: var(--colour-border-strong);
+} 
+
+.search .has-error-true .input-search {
+  border-color: var(--colour-border-danger);
+}
+
+.search .state-focus.has-error-false .input-search {
+  border-color: var(--colour-border-interactive);
+
+  /* focus/default */
+  box-shadow: var(--focus-default);
+  outline: none;
+}
+
+.search .state-focus.has-error-true .input-search {
+  /* focus/default */
+  box-shadow: var(--focus-danger);
+  outline: none;
+}
+
+.search .state-disabled.has-error-false, .state-disabled.has-error-true, .form-label-disabled, .form-helper-disabled, .form-error-disabled {
+  border-color: var(--colour-border-strong);
+  color: var(--colour-fg-default);
+  opacity: 0.3;
+}
+
+.search .state-focus .input-search .text {
+  color: var(--colour-fg-default);
+}
+
+
