@@ -33,11 +33,11 @@ export const Accordion = ({
         <div className={`accordion-header`} tabindex="0">
           {iconBool && <Icon className="title-icon" />}
           <div className="title-text">{title}</div>
-          <button onClick={accordionToggle} className="accordion-toggle-button">
+          <button onClick={accordionToggle} className="accordion-toggle-button" tabindex="0">
             {" "}
             {}
-            {stateToggle === true && <OpenIcon tabindex="0" className="open-icon" />}
-            {stateToggle === false && <CloseIcon tabindex="0" className="close-icon" />}
+            {stateToggle === true && <OpenIcon className="open-icon" />}
+            {stateToggle === false && <CloseIcon className="close-icon" />}
           </button>
         </div>
       </div>
