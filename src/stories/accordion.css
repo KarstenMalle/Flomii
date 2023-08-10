@@ -54,25 +54,57 @@
 
 }
 
-.accordion .accordion-header .open-icon,
-.accordion .accordion-header .close-icon {
+.accordion .accordion-header .icon-container {
     overflow: hidden;
-    flex-grow: 0; 
     width: var(--icon-size-md);
     height: var(--icon-size-md);
     background: none;
-    border: 1px solid transparent;
+    border: none;
     cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
 }
 
-.accordion .accordion-content {
+.accordion .accordion-header .open-icon,
+.accordion .accordion-header .close-icon {
+    position: absolute;
+
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+
+    transition: opacity 0.2s ease-in;
+}
+
+.accordion .accordion-header .open-icon.hidden,
+.accordion .accordion-header .close-icon.hidden {
+    opacity: 0;
+    pointer-events: none;   /* Ensure that hidden icons don't interfere with interactions. */
+}
+
+.accordion .accordion-header .open-icon.visible,
+.accordion .accordion-header .close-icon.visible {
+    opacity: 1;
+}
+
+.accordion .accordion-content-true {
     display: flex;
-    padding: 0px var(--spacing-space-4, 8px) var(--spacing-space-10, 40px) var(--spacing-space-4, 8px);
+    padding: 0px var(--spacing-space-4, 8px) var(--spacing-space-8, 24px) var(--spacing-space-4, 8px);
     align-items: flex-start;
     align-self: stretch;
 }
 
-.accordion .accordion-content .text {
+.accordion .accordion-content-false {
+    display: flex;
+    padding: 0px var(--spacing-space-4, 8px) var(--spacing-space-0, 0px) var(--spacing-space-4, 8px);
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.accordion .accordion-content-true .text,
+.accordion .accordion-content-false .text {
     color: var(--colour-fg-muted, #52504E);
     /* text/mobile/body-md/regular */
     font-family: Work Sans;

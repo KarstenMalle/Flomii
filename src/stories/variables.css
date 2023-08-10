@@ -280,6 +280,7 @@
   --border-radius-sm: 4px;
 
   /* Spacing */
+  --spacing-space-0: 0px;
   --spacing-space-1: 2px;
   --spacing-space-2: 4px;
   --spacing-space-3: 6px;
@@ -322,7 +323,13 @@
   --motion-duration-long-2: 700ms;
 }
 
+
 @font-face {
   font-family: "Work Sans";
   src: url("./assets/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Neco";
+  src: url("./assets/fonts/Neco-Medium.otf") format("truetype");
 }
