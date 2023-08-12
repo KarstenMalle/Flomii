@@ -207,10 +207,6 @@
   background: var(--colour-button-danger-default-bg);
 }
 
-/* Icon styles */
-.icon {
-  /* common icon styles */
-}
 
 @font-face {
   font-family: "Work Sans";

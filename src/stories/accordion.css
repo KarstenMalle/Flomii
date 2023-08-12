@@ -75,7 +75,8 @@
     width: var(--icon-size-md);
     height: var(--icon-size-md);
 
-    transition: opacity 0.2s ease-in;
+    
+    transition: all var(--motion-duration-short-2) var(--motion-easing-standard);
 }
 
 .accordion .accordion-header .open-icon.hidden,
@@ -87,6 +88,7 @@
 .accordion .accordion-header .open-icon.visible,
 .accordion .accordion-header .close-icon.visible {
     opacity: 1;
+    
 }
 
 .accordion .accordion-content-true {
@@ -118,3 +120,6 @@
     height: 1px;
     background: var(--colour-border-default, #B3B1AE);
 }
+
+
+
